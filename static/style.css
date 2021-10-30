@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Sora';
+}
+
+h1 {
+    font-weight: 300;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover, a:active {
+    color: blueviolet;
+}
+
+#navbar {
+    font-weight: 400;
+}
