@@ -17,6 +17,9 @@ require_once 'settings.php';
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Offer creation Link -->
+  <link rel="stylesheet" href="static/offer.css">
+
 </head>
 
 <body>
@@ -25,7 +28,7 @@ require_once 'settings.php';
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
+        <div class="logo_name">EstagIO</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -37,23 +40,30 @@ require_once 'settings.php';
       <li>
         <a href="?section=food">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Food</span>
+          <span class="links_name">Empregos</span>
         </a>
-         <span class="tooltip">Food</span>
+         <span class="tooltip">Empregos</span>
       </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Estágios</span>
+       </a>
+       <span class="tooltip">Estágios</span>
+     </li>      
       <li>
        <a href="?section=drinks">
          <i class='bx bx-user' ></i>
-         <span class="links_name">Drinks</span>
+         <span class="links_name">Bolsas</span>
        </a>
-       <span class="tooltip">Drinks</span>
+       <span class="tooltip">Bolsas</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+       <a href="?section=create_offer">
+         <i class='bx bx-align-justify' ></i>
+         <span class="links_name">Criar oferta</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Criar oferta</span>
      </li>
      <li>
        <a href="#">
@@ -71,13 +81,6 @@ require_once 'settings.php';
      </li>
      <li>
        <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
          <i class='bx bx-heart' ></i>
          <span class="links_name">Saved</span>
        </a>
@@ -92,10 +95,10 @@ require_once 'settings.php';
      </li>
      <li class="profile">
          <div class="profile-details">
-           <img src="static/images/indiano-google.jpg" alt="profileImg">
+           <img src="static/images/DSC07315.JPG" alt="profileImg">
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name">João Catré</div>
+             <div class="job">Developer</div>
            </div>
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
@@ -119,6 +122,10 @@ else {
 		case 'drinks':
 			include "contents/drinks.php";
 			break;
+
+    case 'create_offer':
+      include "contents/create_offer.php";
+      break;
 		
 		default:
 			include "contents/home.php";
