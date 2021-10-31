@@ -11,11 +11,13 @@ require_once 'settings.php';
 	<!-- <link rel="stylesheet" type="text/css" href="static/style.css" /> -->
 
 	<!-- Sidebar styles -->
-	<link rel="stylesheet" href="static/sidebar.css">
+	<link rel="stylesheet" href="static/sidebar.css" />
     
-	<!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -42,11 +44,11 @@ require_once 'settings.php';
          <span class="tooltip">Food</span>
       </li>
       <li>
-       <a href="?section=drinks">
+       <a href="?section=research">
          <i class='bx bx-user' ></i>
-         <span class="links_name">Drinks</span>
+         <span class="links_name">Research</span>
        </a>
-       <span class="tooltip">Drinks</span>
+       <span class="tooltip">Research</span>
      </li>
      <li>
        <a href="#">
@@ -116,8 +118,8 @@ else {
 			include "contents/food.php";
 			break;
 		
-		case 'drinks':
-			include "contents/drinks.php";
+		case 'research':
+			include "contents/research.php";
 			break;
 		
 		default:
@@ -130,5 +132,7 @@ else {
 </section>
 
 <script type="text/javascript" src="static/sidebar.js"></script>
+
+<script type="text/javascript" src="static/fetch.js"> </script>
 </body>
 </html>

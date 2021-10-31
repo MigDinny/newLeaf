@@ -10,11 +10,10 @@
 		"company": "Marilia FC",
 		"graduation-requirements": "Licenciado",
 		"remote": "FULL",
-        "course":
-            {
+        "course": {
                 "id": "123",
-                "name": "Engenharia Informatica",
-            }
+                "name": "Engenharia Informatica"
+        }
 	},
 	{
 		"id": "0002",
@@ -28,7 +27,7 @@
         "course":
             {
                 "id": "123",
-                "name": "Engenharia Informatica",
+                "name": "Engenharia Informatica"
             }
 	},
 	{
@@ -43,7 +42,7 @@
         "course":
             {
                 "id": "323",
-                "name": "Ciencias do Desporto",
+                "name": "Ciencias do Desporto"
             }
 	},
     {
@@ -58,7 +57,7 @@
         "course":
             {
                 "id": "333",
-                "name": "Engenharia Aeroespacial",
+                "name": "Engenharia Aeroespacial"
             }
     }
 ]
