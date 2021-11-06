@@ -8,14 +8,17 @@ require_once 'settings.php';
 <head>
 
 	<title>PGI Project</title>
-	<!-- <link rel="stylesheet" type="text/css" href="static/style.css" /> -->
+	<link rel="stylesheet" type="text/css" href="static/style.css" />
 
 	<!-- Sidebar styles -->
-	<link rel="stylesheet" href="static/sidebar.css">
+	<link rel="stylesheet" href="static/sidebar.css" />
     
-	<!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
   <!-- Offer creation Link -->
   <link rel="stylesheet" href="static/offer.css">
@@ -119,6 +122,18 @@ else {
       include "contents/create_offer.php";
       break;
 		
+		case 'research':
+			include "contents/research.php";
+			break;
+		
+    case 'internships':
+      include "contents/internships.php";
+      break;
+
+    case 'jobs':
+      include "contents/jobs.php";
+      break;
+
 		default:
 			include "contents/home.php";
 			break;
@@ -129,5 +144,6 @@ else {
 </section>
 
 <script type="text/javascript" src="static/sidebar.js"></script>
+
 </body>
 </html>
