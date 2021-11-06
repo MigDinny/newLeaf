@@ -24,8 +24,10 @@ let d;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData(section, course_id_param, salary_param, location_param, remote_param, graduation_req_param) {
+function fetchData(section) {
     const url = "/api/search.php";
+
+    course_id_param = document.getElementById("course").value;
 
     if(salary_param == undefined ){
         salary_param = 0;
