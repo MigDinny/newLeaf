@@ -39,6 +39,7 @@
     <input style="margin-left: 20px" type="submit" value="Submeter">
 </div>
 
+
 <!-- lista com as rows das cenas -->
 
 <ul id="entry-list">

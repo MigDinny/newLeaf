@@ -42,6 +42,8 @@
 <!-- lista com as rows das cenas -->
 
 <ul id="entry-list">
+
+
     <li class="entry-row">
         <h3>Back-end PHP + PostgreSQL</h3>
         <span><b>Localização: </b>Portugal</span><br>
