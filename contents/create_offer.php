@@ -1,5 +1,6 @@
 <div class="text">Criar Oferta</div>
-<div id="create-offer" class="content">
+<div id="create-offer" class="page-content">
+
 
 
   <div class="container">
