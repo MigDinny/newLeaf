@@ -15,6 +15,7 @@
 
 let obj;
 let ul;
+let d;
 
 /**
  * connects to the API and calls updateData() when the data arrives.
@@ -42,9 +43,7 @@ function fetchData(section, course_id_param, salary_param, location_param, remot
         graduation_req_param = "";
     }
 
-
-
-    let params = {
+    let get_params = {
         type: "job",
         course_id: course_id_param,
         salary:salary_param,
@@ -53,8 +52,8 @@ function fetchData(section, course_id_param, salary_param, location_param, remot
         graduation_requirements:graduation_req_param,
     }
     
-    res = axios.get(url, params)
-    .then(data => updateData(data.data, section))
+    res = axios.get(url, {params: get_params})
+    .then(data => updateData(data.data, section, data))
     .catch(err => console.error(err));
 }
 
@@ -63,7 +62,8 @@ function fetchData(section, course_id_param, salary_param, location_param, remot
  * 
  * @param {jsonObject} jsonResponseObj data returned by the API
  */
-function updateData(jsonResponseObj, section) {
+function updateData(jsonResponseObj, section, test) {
+    d = test;
     ul = document.getElementById("entry-list");
     obj = jsonResponseObj;
 
