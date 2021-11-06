@@ -1,5 +1,5 @@
 <div class="text">Internships</div>
-<div id="internships" class="content">
+<div id="internships" class="page-content">
 
 <!-- Filters -->
 <!--Current filters: type (obligatory), course id, salary, location, remoteness(?) and graduation requirements -->

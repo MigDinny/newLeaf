@@ -1,5 +1,5 @@
 <div class="text">Research Grants</div>
-<div id="research" class="content">
+<div id="research" class="page-content">
 
 <!-- Filters -->
 <!--Current filters: type (obligatory), course id, salary, location, remoteness(?) and graduation requirements.-->

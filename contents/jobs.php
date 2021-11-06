@@ -1,5 +1,5 @@
 <div class="text">Trabalhos</div>
-<div id="jobs" class="content">
+<div id="jobs" class="page-content">
 
 <!-- Filters -->
 <!--Current filters: type (obligatory), course id, salary, location, remoteness(?) and graduation requirements.-->
