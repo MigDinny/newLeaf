@@ -1,5 +1,5 @@
 <div class="text">Jobs</div>
-<div id="jobs" class="content">
+<div id="jobs" class="page-content">
 
 <!-- lista com as rows das cenas -->
 

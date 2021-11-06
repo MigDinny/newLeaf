@@ -1,5 +1,5 @@
 <div class="text">Research Grants</div>
-<div id="research" class="content">
+<div id="research" class="page-content">
 
 <!-- lista com as rows das cenas -->
 
