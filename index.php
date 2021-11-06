@@ -8,14 +8,17 @@ require_once 'settings.php';
 <head>
 
 	<title>PGI Project</title>
-	<!-- <link rel="stylesheet" type="text/css" href="static/style.css" /> -->
+	<link rel="stylesheet" type="text/css" href="static/style.css" />
 
 	<!-- Sidebar styles -->
-	<link rel="stylesheet" href="static/sidebar.css">
+	<link rel="stylesheet" href="static/sidebar.css" />
     
-	<!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
 </head>
 
@@ -35,25 +38,25 @@ require_once 'settings.php';
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="?section=food">
+        <a href="?section=jobs">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Food</span>
+          <span class="links_name">Jobs</span>
         </a>
-         <span class="tooltip">Food</span>
+         <span class="tooltip">Jobs</span>
       </li>
-      <li>
-       <a href="?section=drinks">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">Drinks</span>
+     <li>
+       <a href="?section=internships">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Internships</span>
        </a>
-       <span class="tooltip">Drinks</span>
+       <span class="tooltip">Internships</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+       <a href="?section=research">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Research</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Research</span>
      </li>
      <li>
        <a href="#">
@@ -116,10 +119,18 @@ else {
 			include "contents/food.php";
 			break;
 		
-		case 'drinks':
-			include "contents/drinks.php";
+		case 'research':
+			include "contents/research.php";
 			break;
 		
+    case 'internships':
+      include "contents/internships.php";
+      break;
+
+    case 'jobs':
+      include "contents/jobs.php";
+      break;
+
 		default:
 			include "contents/home.php";
 			break;
@@ -130,5 +141,6 @@ else {
 </section>
 
 <script type="text/javascript" src="static/sidebar.js"></script>
+
 </body>
 </html>
