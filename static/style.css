@@ -24,6 +24,7 @@ a {
     padding:20px;
     margin-bottom: 20px;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+    margin: 20px 0 12px 0;
 }
 
 .entry-row span {
@@ -42,3 +43,7 @@ a {
     list-style-type: none;
 }
 
+.filter {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
