@@ -14,11 +14,9 @@
 
     <label for="filters">Salário:</label>
     <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir valor" required>
-    </select>
 
     <label for="filters">Localização:</label>
     <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir cidade" required>
-    </select>
 
     <label for="filters">Remoto:</label>
     <select name="filters" id="remote">
