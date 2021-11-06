@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Poppins','Sora',sans-serif; 
 }
+/*
 body{
   height: 100vh;
   display: flex;
@@ -12,7 +13,7 @@ body{
   align-items: center;
   padding: 0px;
   background: linear-gradient(135deg, #E4E9F7, #E4E9F7);
-}
+}*/
 .container{
   max-width: 1400px;
   width: 100%;
