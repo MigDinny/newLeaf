@@ -44,7 +44,7 @@ function fetchData(section, course_id_param, salary_param, location_param, remot
     }
 
     let get_params = {
-        type: "job",
+        type: section,
         course_id: course_id_param,
         salary:salary_param,
         location:location_param,
