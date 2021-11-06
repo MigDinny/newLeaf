@@ -29,6 +29,6 @@
 <script>
 
 // call for the first time
-fetchData("jobs");
+fetchData("jobs",2,30,null,null,null);
 
 </script>

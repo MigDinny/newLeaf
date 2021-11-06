@@ -100,9 +100,9 @@
     }
 
     //Checks to see if there is graduation requirements filter and applies it
-    if(isset($_GET['graduation-requirements'])){
+    if(isset($_GET['graduation_requirements'])){
      
-        $graduation_requirements = strtoupper($_GET['graduation-requirements']);
+        $graduation_requirements = strtoupper($_GET['graduation_requirements']);
 
         $query .= " AND upper(graduation_requirements) =  '$graduation_requirements' ";
 

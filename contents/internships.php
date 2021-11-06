@@ -28,6 +28,7 @@
 <script type="text/javascript" src="static/fetch.js"></script>
 <script>
 // call for the first time
-fetchData("internships");
+
+fetchData("internships",2,300,null,null,null);
 
 </script>

@@ -23,11 +23,34 @@ let ul;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData(section) {
+function fetchData(section, course_id_param, salary_param, location_param, remote_param, graduation_req_param) {
     const url = "/api/search.php";
 
-    const params = {
-        type: section,
+    if(salary_param == undefined ){
+        salary_param = 0;
+    }
+
+    if( location_param == undefined ){
+        location_param = "";
+    }
+
+    if(remote_param == undefined){
+        remote_param = "";
+    }
+
+    if(graduation_req_param == undefined){
+        graduation_req_param = "";
+    }
+
+
+
+    let params = {
+        type: "job",
+        course_id: course_id_param,
+        salary:salary_param,
+        location:location_param,
+        remote:remote_param,
+        graduation_requirements:graduation_req_param,
     }
     
     res = axios.get(url, params)
@@ -55,10 +78,10 @@ function updateData(jsonResponseObj, section) {
 
         // add HTML row to the content
         innerHTML += "<h3>" + row.name + "</h3>";
-        innerHTML += "<span><b>Localização:</b> " + "</span><br>";
+        innerHTML += "<span><b>Localização:</b> " + row.location + "</span><br>";
         innerHTML += "<span><b>Empresa:</b> " + row.company + "</span><br>";
         innerHTML += "<span><b>Salário bruto:</b> " + row.salary + "</span><br>";
-        innerHTML += "<span><b>Requisitos Académicos:</b> " + row['graduation-requirements'] + "</span><br>";
+        innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements + "</span><br>";
         innerHTML += "<span><b>Remote: </b> " + row.remote + "</span><br>";
 
         // create element
