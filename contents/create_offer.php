@@ -27,7 +27,7 @@
             <label for="dot-1">
             <span class="dot one"></span>
             <span class="contract">Sim</span>
-            <input style="margin-left: 20px" type="text" placeholder="Duração" required>
+            <input name="duration" style="margin-left: 20px" type="text" placeholder="Duração" required>
           </label>
           <label for="dot-2">
             <span class="dot two"></span>
