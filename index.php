@@ -38,21 +38,21 @@ require_once 'settings.php';
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="?section=food">
+        <a href="?section=jobs">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Empregos</span>
         </a>
          <span class="tooltip">Empregos</span>
       </li>
       <li>
-       <a href="#">
+       <a href="?section=internships">
          <i class='bx bx-chat' ></i>
          <span class="links_name">Estágios</span>
        </a>
        <span class="tooltip">Estágios</span>
      </li>      
       <li>
-       <a href="?section=drinks">
+       <a href="?section=research">
          <i class='bx bx-user' ></i>
          <span class="links_name">Bolsas</span>
        </a>
@@ -95,10 +95,10 @@ require_once 'settings.php';
      </li>
      <li class="profile">
          <div class="profile-details">
-           <img src="static/images/DSC07315.JPG" alt="profileImg">
+           <img src="static/images/user-profile.jpg" alt="profileImg">
            <div class="name_job">
-             <div class="name">João Catré</div>
-             <div class="job">Developer</div>
+             <div class="name">Username</div>
+             <div class="job">User's Job</div>
            </div>
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
@@ -115,14 +115,6 @@ require_once 'settings.php';
 if (!isset($_GET['section'])) include "contents/home.php";
 else {
 	switch($_GET['section']) {
-		case 'food':
-			include "contents/food.php";
-			break;
-		
-		case 'drinks':
-			include "contents/drinks.php";
-			break;
-
     case 'create_offer':
       include "contents/create_offer.php";
       break;
