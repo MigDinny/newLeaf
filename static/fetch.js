@@ -23,15 +23,15 @@ let ul;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData() {
+function fetchData(section) {
     const url = "/api/search.php";
 
     const params = {
-        type: "job",
+        type: section,
     }
     
     res = axios.get(url, params)
-    .then(data => updateData(data.data))
+    .then(data => updateData(data.data, section))
     .catch(err => console.error(err));
 }
 
@@ -40,7 +40,7 @@ function fetchData() {
  * 
  * @param {jsonObject} jsonResponseObj data returned by the API
  */
-function updateData(jsonResponseObj) {
+function updateData(jsonResponseObj, section) {
     ul = document.getElementById("entry-list");
     obj = jsonResponseObj;
 
@@ -74,6 +74,3 @@ function updateData(jsonResponseObj) {
 
     });
 }
-
-// call for the first time
-fetchData();

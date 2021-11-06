@@ -38,25 +38,25 @@ require_once 'settings.php';
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="?section=food">
+        <a href="?section=jobs">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Food</span>
+          <span class="links_name">Jobs</span>
         </a>
-         <span class="tooltip">Food</span>
+         <span class="tooltip">Jobs</span>
       </li>
-      <li>
+     <li>
+       <a href="?section=internships">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Internships</span>
+       </a>
+       <span class="tooltip">Internships</span>
+     </li>
+     <li>
        <a href="?section=research">
          <i class='bx bx-user' ></i>
          <span class="links_name">Research</span>
        </a>
        <span class="tooltip">Research</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
      </li>
      <li>
        <a href="#">
@@ -123,6 +123,14 @@ else {
 			include "contents/research.php";
 			break;
 		
+    case 'internships':
+      include "contents/internships.php";
+      break;
+
+    case 'jobs':
+      include "contents/jobs.php";
+      break;
+
 		default:
 			include "contents/home.php";
 			break;

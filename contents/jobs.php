@@ -1,5 +1,5 @@
-<div class="text">Research Grants</div>
-<div id="research" class="content">
+<div class="text">Jobs</div>
+<div id="jobs" class="content">
 
 <!-- lista com as rows das cenas -->
 
@@ -29,6 +29,6 @@
 <script>
 
 // call for the first time
-fetchData("research");
+fetchData("jobs");
 
 </script>
