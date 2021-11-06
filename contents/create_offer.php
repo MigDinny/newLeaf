@@ -1,7 +1,5 @@
 <div class="text">Criar Oferta</div>
 <div id="create-offer" class="page-content">
-
-
   <div class="container">
     <div class="title">Informação da oferta</div>
     <div class="content">
@@ -17,7 +15,7 @@
           </div>
           <div class="input-box">
             <span class="details">Salário</span>
-            <input name="salary" type="text" placeholder="Introduza o valor mensal" required>
+            <input name="salary" type="number" placeholder="Introduza o valor mensal em euros" required>
           </div>
           <div class="contract-details input-box">
           <input type="radio" name="contract" id="dot-1">
@@ -27,7 +25,7 @@
             <label for="dot-1">
             <span class="dot one"></span>
             <span class="contract">Sim</span>
-            <input name="duration" style="margin-left: 20px" type="text" placeholder="Duração" required>
+            <input name="duration" style="margin-left: 20px" type="number" placeholder="Duração em meses" required>
           </label>
           <label for="dot-2">
             <span class="dot two"></span>
@@ -37,15 +35,15 @@
         </div>
           <div class="textarea">
             <span class="details">Requisitos</span>
-            <textarea rows="4" cols="100" placeholder="Requesitos necessários para os aplicantes" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Requesitos necessários para os aplicantes" required></textarea>
           </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
-            <textarea rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Benefícios que dispõe" required></textarea>
           </div>
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea rows="4" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required></textarea>
           </div>
         </div>
         <div class="button">
