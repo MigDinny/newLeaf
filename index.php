@@ -20,6 +20,9 @@ require_once 'settings.php';
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
+  <!-- Offer creation Link -->
+  <link rel="stylesheet" href="static/offer.css">
+
 </head>
 
 <body>
@@ -28,7 +31,7 @@ require_once 'settings.php';
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
+        <div class="logo_name">EstagIO</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -40,23 +43,30 @@ require_once 'settings.php';
       <li>
         <a href="?section=jobs">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Jobs</span>
+          <span class="links_name">Empregos</span>
         </a>
-         <span class="tooltip">Jobs</span>
+         <span class="tooltip">Empregos</span>
       </li>
-     <li>
+      <li>
        <a href="?section=internships">
          <i class='bx bx-chat' ></i>
-         <span class="links_name">Internships</span>
+         <span class="links_name">Estágios</span>
        </a>
-       <span class="tooltip">Internships</span>
-     </li>
-     <li>
+       <span class="tooltip">Estágios</span>
+     </li>      
+      <li>
        <a href="?section=research">
          <i class='bx bx-user' ></i>
-         <span class="links_name">Research</span>
+         <span class="links_name">Bolsas</span>
        </a>
-       <span class="tooltip">Research</span>
+       <span class="tooltip">Bolsas</span>
+     </li>
+     <li>
+       <a href="?section=create_offer">
+         <i class='bx bx-align-justify' ></i>
+         <span class="links_name">Criar oferta</span>
+       </a>
+       <span class="tooltip">Criar oferta</span>
      </li>
      <li>
        <a href="#">
@@ -74,13 +84,6 @@ require_once 'settings.php';
      </li>
      <li>
        <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
          <i class='bx bx-heart' ></i>
          <span class="links_name">Saved</span>
        </a>
@@ -95,10 +98,10 @@ require_once 'settings.php';
      </li>
      <li class="profile">
          <div class="profile-details">
-           <img src="static/images/indiano-google.jpg" alt="profileImg">
+           <img src="static/images/user-profile.jpg" alt="profileImg">
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name">Username</div>
+             <div class="job">User's Job</div>
            </div>
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
@@ -115,9 +118,9 @@ require_once 'settings.php';
 if (!isset($_GET['section'])) include "contents/home.php";
 else {
 	switch($_GET['section']) {
-		case 'food':
-			include "contents/food.php";
-			break;
+    case 'create_offer':
+      include "contents/create_offer.php";
+      break;
 		
 		case 'research':
 			include "contents/research.php";
