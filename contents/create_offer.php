@@ -37,15 +37,15 @@
         </div>
           <div class="textarea">
             <span class="details">Requisitos</span>
-            <textarea rows="4" cols="100" placeholder="Requesitos necessários para os aplicantes" required></textarea>
+            <textarea rows="4" cols="10000" placeholder="Requesitos necessários para os aplicantes" required></textarea>
           </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
-            <textarea rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
+            <textarea rows="4" cols="10000" placeholder="Benefícios que dispõe" required></textarea>
           </div>
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea rows="4" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
+            <textarea rows="4" cols="10000" placeholder="Introduza a descrição completa da oferta" required></textarea>
           </div>
         </div>
         <div class="button">
