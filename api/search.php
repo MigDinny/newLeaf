@@ -15,20 +15,9 @@
 
     require_once '../settings.php';
 
-    //TEMPORARY
-    //id/type/name/salary/details/company/graduation-requirements/remote/course(id/name)
-    /*$dummy_table = array( 
-        array("0001", "INTERNSHIP", "Estagio OREOS", 3000, "É kinda cringe", "Marilia FC", "Licenciado", "FULL", array("123", "Engenharia Informatica")), 
-        array("0002", "JOB", "Backend Python", 10000, "API\'s and tables go brrrrrrrrrr", "Gogle", "Universidade", "HYBRID", array("123", "Engenharia Informatica")),
-        array("0003", "RESEARCH", "Bolsa Natação glup glup", 10, "10 euros já é muito...", "Nautico Miranda do Corvo", "None", "NO", array("323", "Ciencias do Desporto")),
-        array("0004", "RESEARCH", "Bolsa SpaceX", 1000, "For studies in Mars terrain idk take my money - Elon Musk", "SpaceX", "Licenciatura", "FULL", array("333", "Engenharia Aeroespacial"))
 
-    );*/
-    //END TEMPORARY
-
-    //Variables. Query as the query text. Needs_and sees if a and needs to be added to the query. 
-    $query = "SELECT * FROM ";
-    $needs_and = false;
+    //Variables. Query has the query text.
+    $query = "SELECT * FROM "; 
 
     //If a obligatory paramet is missing
     function error(){
@@ -36,57 +25,42 @@
         die();
     }
 
-    //Fucntion that checks if a where or add needs to be added
-    function checkWhere(){
-        global $query, $needs_and;
-        if($needs_and) $query .= " AND";
-        else $query .= " WHERE";
-    }
-
-    
 
     //Checks if the obligatory GET arguments exist
-    if (!isset($_GET['type'])){
- 
+    if(!isset($_GET['type']) || !isset($_GET['course_id'])){
         error();
     } 
     
+    //Gets values
     $type = strtoupper($_GET['type']);
+    $course_id = $_GET['course_id'];
 
+    //Checks if course_id could be valid
+    if(!intval($course_id) || $course_id < 0){
+        error();
+    }
 
     //Checks if the type is valid out of 3 options (RESEARCH, JOB, INTERNSHIP)
     if($type != "RESEARCH" && $type != "INTERNSHIP" && $type != "JOB"){
-
         error();
     }
+
+    
+    $query .= " $type ";
+    $query .= " WHERE course_id = " . $course_id;
+
 
     //If a parameter is wrong, everything is printed.
     function printAll(){
         global $type;
-        $query = "SELECT * FROM $type";
+        global $course_id;
+
+        $query = "SELECT * FROM $type WHERE course_id = $course_id";
         $data = DB::query($query);
         $toJson = json_encode($data);
         echo $toJson;
+
         die();
-    }
-
-    $query .= " $type ";
-
-    //Checks if the course id exists and is valid
-    if(isset($_GET['course_id'])){
-
-        $course_id = $_GET['course_id'];
-
-        if(!intval($course_id) || $course_id < 0){
-            printAll();
-        }
-
-        //See if the where is needed / if there are more conditions before this one (if yes then a add is added)
-        checkWhere();
-
-        $query .= " course_id = " . $course_id;
-
-        $needs_and = true;
     }
 
     //Checks to see if there is salary filter
@@ -99,12 +73,8 @@
             printAll();
         }
 
-        checkWhere();
+        $query .= " AND salary >= " . $salary;
         
-        $query .= " salary >= " . $salary;
-        
-        $needs_and = true;
-
     }
 
     //Checks to see if there is location filter
@@ -112,11 +82,7 @@
         
         $location = strtoupper($_GET['location']);
 
-        checkWhere();
-
-        $query .= " location = '$location' ";
-
-        $needs_and = true;
+        $query .= " AND upper(location) LIKE '%$location%' ";    
     }
 
     //Checks to see if there is remote filter
@@ -129,11 +95,8 @@
             printAll();
         }
 
-        checkWhere();
+        $query .= " AND upper(remote) = '$remote' ";
 
-        $query .= " remote = '$remote' ";
-
-        $needs_and = true;
     }
 
     //Checks to see if there is graduation requirements filter and applies it
@@ -141,11 +104,8 @@
      
         $graduation_requirements = strtoupper($_GET['graduation-requirements']);
 
-        checkWhere();
+        $query .= " AND upper(graduation_requirements) =  '$graduation_requirements' ";
 
-        $query .= " graduation_requirements =  '$graduation_requirements' ";
-
-        $needs_and = true;
     }
 
     //for testing purposes
@@ -153,7 +113,29 @@
 
     //Executes sql command and converts array to json.
     $data = DB::query($query);
-    $toJson = json_encode($data);
+    $out_array = [];
+
+    //Get course name
+    $query_temp = "SELECT * FROM course WHERE id =" .$course_id;
+    $course_data = DB::query($query_temp);
+    $course_name = $course_data[0]["name"];
+
+    //Makes the end string be in the correct format
+    for ($i = 0; $i < count($data); $i++){
+
+        array_push($out_array, array( "id" => $data[$i]["id"], 
+                   "name" => $data[$i]["name"], 
+                   "salary" => $data[$i]["salary"], 
+                   "details" =>$data[$i]["details"], 
+                   "company" => $data[$i]["company"], 
+                   "graduation_requirements" => $data[$i]["graduation_requirements"], 
+                   "remote" => $data[$i]["remote"], 
+                   "creation_timestamp" => $data[$i]["creation_timestamp"], 
+                   "location" => $data[$i]["location"], 
+                   "course" => array($data[$i]["course_id"], $course_name)));
+
+    }
+    $toJson = json_encode($out_array);
     echo $toJson;
 
 ?>
