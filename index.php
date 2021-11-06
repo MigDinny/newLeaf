@@ -8,7 +8,7 @@ require_once 'settings.php';
 <head>
 
 	<title>PGI Project</title>
-	<!-- <link rel="stylesheet" type="text/css" href="static/style.css" /> -->
+	<link rel="stylesheet" type="text/css" href="static/style.css" />
 
 	<!-- Sidebar styles -->
 	<link rel="stylesheet" href="static/sidebar.css" />
@@ -18,6 +18,7 @@ require_once 'settings.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
 </head>
 
@@ -133,6 +134,5 @@ else {
 
 <script type="text/javascript" src="static/sidebar.js"></script>
 
-<script type="text/javascript" src="static/fetch.js"> </script>
 </body>
 </html>

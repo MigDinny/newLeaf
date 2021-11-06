@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
 
 body {
     font-family: 'Sora';
@@ -6,17 +6,39 @@ body {
 
 h1 {
     font-weight: 300;
-}
+}*/
 
-a, a:visited {
+a {
     text-decoration: none;
-    color: green;
-}
-
-a:hover, a:active {
-    color: blueviolet;
 }
 
 #navbar {
     font-weight: 400;
 }
+
+.entry-row {
+    background-color: white;
+    border: white;
+    border-width: thick;
+    border-radius: 7px;
+    padding:20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.entry-row span {
+    font-size: 14px;
+}
+
+.entry-row h3 {
+    font-weight: 400;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.content ul {
+    list-style-type: none;
+}
+

@@ -231,6 +231,7 @@
   width: calc(100% - 78px);
   transition: all 0.5s ease;
   z-index: 2;
+  padding: 2%;
 }
 .sidebar.open ~ .home-section{
   left: 250px;
@@ -240,8 +241,7 @@
   display: inline-block;
   color: #11101d;
   font-size: 25px;
-  font-weight: 500;
-  margin: 18px
+  font-weight: 300;
 }
 @media (max-width: 420px) {
   .sidebar li .tooltip{
