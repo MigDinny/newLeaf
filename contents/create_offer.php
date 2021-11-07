@@ -5,7 +5,7 @@
   <div class="container">
     <div class="title">Informação da oferta</div>
     <div class="content">
-      <form action="#">
+      <form action="api/create-offer.php">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Título</span>
@@ -55,3 +55,15 @@
     </div>
   </div>
 </div>
+
+<?php
+
+if (isset($_GET['result'])) {
+  if ($_GET['result'] == 'success') {
+    echo "<script>alert('Oferta criada com sucesso!');</script>";
+  } else {
+    echo "<script>alert('Um erro inesperado ocorreu. Contacte o administrador.');</script>";
+  }
+}
+
+?>
