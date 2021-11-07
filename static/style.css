@@ -47,3 +47,26 @@ a {
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
 }
+
+#homepage-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+#select-search-course {
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+#select-search-course:focus { 
+    border-color: #505050;
+}
