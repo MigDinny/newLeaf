@@ -42,32 +42,33 @@ require_once 'settings.php';
       </li>
       <li>
         <a href="?section=jobs">
-          <i class='bx bx-grid-alt'></i>
+          <i class='bx bx-briefcase'></i>
           <span class="links_name">Empregos</span>
         </a>
          <span class="tooltip">Empregos</span>
       </li>
       <li>
        <a href="?section=internships">
-         <i class='bx bx-chat' ></i>
+         <i class='bx bxs-graduation' ></i>
          <span class="links_name">Estágios</span>
        </a>
        <span class="tooltip">Estágios</span>
      </li>      
       <li>
        <a href="?section=research">
-         <i class='bx bx-user' ></i>
+         <i class='bx bx-archive' ></i>
          <span class="links_name">Bolsas</span>
        </a>
        <span class="tooltip">Bolsas</span>
      </li>
      <li>
        <a href="?section=create_offer">
-         <i class='bx bx-align-justify' ></i>
+         <i class='bx bx-list-plus' ></i>
          <span class="links_name">Criar oferta</span>
        </a>
        <span class="tooltip">Criar oferta</span>
      </li>
+     <!-- 
      <li>
        <a href="#">
          <i class='bx bx-pie-chart-alt-2' ></i>
@@ -82,6 +83,7 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Files</span>
      </li>
+     -->
      <li>
        <a href="#">
          <i class='bx bx-heart' ></i>
