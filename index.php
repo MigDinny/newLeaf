@@ -31,7 +31,7 @@ require_once 'settings.php';
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">EstagIO</div>
+        <div class="logo_name">newLeaf</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
