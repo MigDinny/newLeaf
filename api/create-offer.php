@@ -53,19 +53,50 @@ if( isset( $_POST['submit'])){
         $benefits = $_POST['benefits'];
     }
 
-    $details .= '<br> REQUISITES <br>' .$requisites;
-    $details .= '<br> BENEFITS <br>' .$benefits;
-
+    $details .= '\n REQUISITES \n' .$requisites;
+    $details .= '\n BENEFITS \n' .$benefits;
+    $date = new \DateTime('now');
     switch($type){
         case 0:
-            DB::query('insert into job (name,salary,details,company,graduation_requirements,remote,creation_timestamp,location,course_id)
-                    Values(' .$title .',' .$salary .',' .$details .')');
+            DB::insert('job' , [
+                'name' => $title,
+                'salary' => $salary,
+                'details' => $details,
+                'company' => $company,
+                'graduation_requirements' => 'University',
+                'remote' => 'remote',
+                'creation_timestamp' => $date->format('D M d, Y G:i'),
+                'location' => 'Miranda',
+                'course_id' =>  2
+            ]);
             break;
 
         case 1:
+            DB::insert('internship' , [
+                'name' => $title,
+                'salary' => $salary,
+                'details' => $details,
+                'company' => $company,
+                'graduation_requirements' => 'University',
+                'remote' => 'remote',
+                'creation_timestamp' => $date->format('D M d, Y G:i'),
+                'location' => 'Miranda',
+                'course_id' =>  2
+            ]);
             break;
 
         case 2:
+            DB::insert('research' , [
+                'name' => $title,
+                'salary' => $salary,
+                'details' => $details,
+                'company' => $company,
+                'graduation_requirements' => 'University',
+                'remote' => 'remote',
+                'creation_timestamp' => $date->format('D M d, Y G:i'),
+                'location' => 'Miranda',
+                'course_id' =>  2
+            ]);
             break;
 
     }
