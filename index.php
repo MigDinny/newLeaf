@@ -68,6 +68,14 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Criar oferta</span>
      </li>
+     
+     <li>
+       <a href="?section=about">
+         <i class='bx bx-list-plus' ></i>
+         <span class="links_name">Sobre nós</span>
+       </a>
+       <span class="tooltip">Sobre nós</span>
+     </li>
      <!-- 
      <li>
        <a href="#">
