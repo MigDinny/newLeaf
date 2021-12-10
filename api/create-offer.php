@@ -7,88 +7,70 @@ require_once '../settings.php';
 
 if( isset( $_POST['submit'])){
     
-    echo "weoijpwoietijqewphoi";    
 
 
     //Checks if title camp was filled
     if( isset( $_POST['title'])){
         $title = $_POST['title'];
     }
-    else{
-        echo "<script>alert('Por favor preencha o campo do título.');</script>";
-        header("Location: /?section=create_offer");
-        
-    }
     
     //Checks if salary camp was filled
     if( isset( $_POST['salary'])){
         $salary = $_POST['salary'];
 
-        if(!intval($salary)){   
-            echo "<script>alert('Por favor ponha inteiros no campo do salário.');</script>";
-            header("Location: /?section=create_offer");
+        if(!intval($salary)){  
+            header("Location: /?section=create_offer&result=1"); 
+            die();
         }
-    }
-    else{
-        echo "<script>alert('Por favor preencha o campo do salário.');</script>";
-        header("Location: /?section=create_offer");
-        
     }
 
     //Checks if company camp was filled
     if( isset( $_POST['company'])){
         $company = $_POST['company'];
     }
-    else{
-        echo "<script>alert('Por favor preencha o campo da companhia.');</script>";
-        header("Location: /?section=create_offer");
-        
-    }
 
     //Checks if duration camp was filled
     if( isset( $_POST['duration'])){
         $duration = $_POST['duration'];
     }
-    else{
-        echo "<script>alert('Por favor preencha o campo da duração.');</script>";
-        header("Location: /?section=create_offer");
-        
+
+    if( isset( $_POST['type'])){
+        $type = $_POST['type'];
     }
 
     //Checks if details camp was filled
-    if( isset( $_POST['details'])){
-        $details = $_POST['details'];
-    }
-    else{
-        echo "<script>alert('Por favor preencha o campo da detalhes.');</script>";
-        header("Location: /?section=create_offer");
-        
+    if( isset( $_POST['description'])){
+        $details = $_POST['description'];
     }
 
     //Checks if requisites camp was filled
     if( isset( $_POST['requisites'])){
         $requisites = $_POST['requisites'];
     }
-    else{
-        echo "<script>alert('Por favor preencha o campo dos requisitos.');</script>";
-        header("Location: /?section=create_offer");
-        
-    }
 
     //Checks if benefits was filled
     if( isset( $_POST['benefits'])){
-        $company = $_POST['benefits'];
+        $benefits = $_POST['benefits'];
     }
-    else{
-        echo "<script>alert('Por favor preencha o campo de beneficios.');</script>";
-        header("Location: /?section=create_offer");
-        
+
+    $details .= '<br> REQUISITES <br>' .$requisites;
+    $details .= '<br> BENEFITS <br>' .$benefits;
+
+    switch($type){
+        case 0:
+            DB::query('insert into job (name,salary,details,company,graduation_requirements,remote,creation_timestamp,location,course_id)
+                    Values(' .$title .',' .$salary .',' .$details .')');
+            break;
+
+        case 1:
+            break;
+
+        case 2:
+            break;
+
     }
-    $details .= "<br><b> REQUISITES: </b><br>" . $requisites;
-    $details .= "<br><b> BENEFITS: </b><br>" . $benefits;
-
-    echo $details;
-
+    
+    header("Location: /?section=create_offer&result=0");
 
     
 
@@ -97,6 +79,7 @@ if( isset( $_POST['submit'])){
 
 
 }
+
 
 // check
 

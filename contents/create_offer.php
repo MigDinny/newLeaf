@@ -49,6 +49,16 @@
           </select>
           </div>
         </div>
+        <div class = "input-box">
+          <div class="textarea" >
+          <span class="details">Tipo de Oferta</span>
+            <select name="type">
+              <option value="0" >Emprego</option>
+              <option value="1" >Estágio</option>
+              <option value="2">Bolsa</option>
+          </select>
+          </div>
+        </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
             <textarea name = "benefits" rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
@@ -69,11 +79,21 @@
 <?php
 
 if (isset($_GET['result'])) {
-  if ($_GET['result'] == 'success') {
-    echo "<script>alert('Oferta criada com sucesso!');</script>";
-  } else {
-    echo "<script>alert('Um erro inesperado ocorreu. Contacte o administrador.');</script>";
+
+  switch($_GET['result']){
+    case 0:
+      echo "<script>alert('Oferta criada com sucesso!');</script>";
+      break;
+
+    case 1:
+      echo "<script>alert('Por favor ponha inteiros no campo do salário.');</script>";
+      break;
+
+    default:
+      echo "<script>alert('Um erro inesperado ocorreu. Contacte o administrador.');</script>";
+      break;
   }
 }
+
 
 ?>
