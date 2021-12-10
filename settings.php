@@ -1,7 +1,7 @@
 <?php
 require_once 'db.class.php';
 
-$production = true;
+$production = false;
 
 // default values
 DB::$user = 'root';
