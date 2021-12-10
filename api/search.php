@@ -19,20 +19,21 @@
     //Variables. Query has the query text.
     $query = "SELECT * FROM "; 
 
+
     //If a obligatory paramet is missing
     function error(){
         echo json_encode(array());
         die();
     }
 
-
+    
     //Checks if the obligatory GET arguments exist
     if(!isset($_GET['type']) || !isset($_GET['course_id'])){
         error();
     } 
     
     //Gets values
-    $type = strtoupper($_GET['type']);
+    $type = strtolower($_GET['type']);
     $course_id = $_GET['course_id'];
 
     //Checks if course_id could be valid
@@ -41,7 +42,7 @@
     }
 
     //Checks if the type is valid out of 3 options (RESEARCH, JOB, INTERNSHIP)
-    if($type != "RESEARCH" && $type != "INTERNSHIP" && $type != "JOB"){
+    if($type != "researc" && $type != "internship" && $type != "job"){
         error();
     }
 
