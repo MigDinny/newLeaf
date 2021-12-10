@@ -1,6 +1,8 @@
 <?php
 require_once 'db.class.php';
 
+//error_reporting(-1);
+
 $production = false;
 
 // default values
@@ -16,6 +18,5 @@ if ($production == true) {
     DB::$dbName = 'id18100393_pgi';
     DB::$host = 'localhost';
 }
-
 
 ?>
