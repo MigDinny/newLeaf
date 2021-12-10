@@ -14,6 +14,7 @@ if ($production == true) {
     DB::$password = '9rwPhb8{[LoO@x68';
     DB::$user = 'id18100393_root';
     DB::$dbName = 'id18100393_pgi';
+    DB::$host = 'localhost';
 }
 
 
