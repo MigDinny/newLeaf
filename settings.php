@@ -20,9 +20,11 @@ if (getenv('DATABASE_URL') != false) {
     DB::$port = $dbopts["port"];
     DB::$encoding = 'utf8';
 
-    
+    var_dump($dbopts);
 
 }
+
+
 
 
 ?>
