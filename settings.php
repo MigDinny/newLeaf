@@ -1,18 +1,13 @@
 <?php
 require_once 'db.class.php';
 
-<<<<<<< Updated upstream
-=======
 $production = true;
 
 // default values
->>>>>>> Stashed changes
 DB::$user = 'root';
 DB::$password = '';
 DB::$dbName = 'pgi';
 
-<<<<<<< Updated upstream
-=======
 // set values for production if ENV is defined
 
 if ($production == true) {
@@ -22,5 +17,4 @@ if ($production == true) {
 }
 
 
->>>>>>> Stashed changes
 ?>
