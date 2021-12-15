@@ -13,9 +13,9 @@ DB::$dbName = 'pgi';
 // set values for production if ENV is defined
 
 if ($production == true) {
-    DB::$password = '9rwPhb8{[LoO@x68';
-    DB::$user = 'id18100393_root';
-    DB::$dbName = 'id18100393_pgi';
+    DB::$password = 'newleaf123';
+    DB::$user = 'limoscan_newleaf';
+    DB::$dbName = 'limoscan_newleaf';
     DB::$host = 'localhost';
 }
 
