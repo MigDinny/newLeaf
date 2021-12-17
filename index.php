@@ -1,3 +1,21 @@
+<?php
+
+require_once "settings.php";
+
+$email = null;
+if (isset($_POST['email'])) {
+	$email = $_POST['email'];
+	
+	DB::insert('emails', [
+		'email' => $email,
+		'ip' => $_SERVER['REMOTE_ADDR'],
+		'ua' => $_SERVER['HTTP_USER_AGENT']
+	]);
+	
+	echo "<script>alert('Thanks for subscribing!');</script>";
+}
+
+?>
 <html>
 
 <head>
@@ -23,7 +41,29 @@
 			
 		}
 		
+		form .button input{
+			height: 45px;
+			margin: 35px 0
+		}
 		
+		form .button {
+   
+   
+			border-radius: 5px;
+			border: none;
+			color: #fff;
+			font-size: 18px;
+			font-weight: 500;
+			letter-spacing: 1px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			background: linear-gradient(135deg, #11101d, #391058);
+		}
+
+		form .button:hover{
+			/* transform: scale(0.99); */
+			background: linear-gradient(-135deg, #505050, #505051);
+		}
 		
 		input{
 			font-family: 'Poppins';
@@ -45,56 +85,39 @@
 			width: 25%;
 		}
 		
+		
 		@media only screen and (orientation: portrait) {
 			body {
 				background-size: cover;
 				background-image: url('static/images/mobile.jpg');
 			}
 			
-			#img { width: 75%; }
+			#img { width: 75%; margin-bottom: 150px; }
 			
-			input { width: 75%; }
+			input { width: 75%; height: 150px; font-size: 30px; border-radius: 18px; }
+								
+			#msg { font-size: 80px; margin-bottom: 150px; }
+			
+			.button { font-size: 30px; margin-top: 30px; border-radius: 18px; }
 			
 		}
 		
+		@media(max-width: 584px){
+			.container{
+			max-width: 100%;
+		}
+
 		
-		 form .button input{
-   height: 45px;
-   margin: 35px 0
- }
- form .button {
-   
-   
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #11101d, #391058);
- }
-
- form .button:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #505050, #505051);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
-}
-
-
+		
 	</style>
 </head>
 <body>
 <div id="content">
 <img id="img" src="static/images/logo.png" />
-<h1 style="color: white;">COMING SOON...</h1>
+<h1 style="color: white;" id="msg">COMING SOON...</h1>
 
 <form action="" method="POST">
-<input type="email" placeholder="Insert your email to be notified on release" />
+<input type="email" name="email" placeholder="Insert your email to be notified on release" />
 <br><br>
 <input class="button" type="submit" value="Submit" />
 </form>
