@@ -2,6 +2,7 @@
 
 require_once "settings.php";
 
+$show = false;
 $email = null;
 if (isset($_POST['email'])) {
 	$email = $_POST['email'];
@@ -12,7 +13,7 @@ if (isset($_POST['email'])) {
 		'ua' => $_SERVER['HTTP_USER_AGENT']
 	]);
 	
-	echo "<script>alert('Thanks for subscribing!');</script>";
+	$show = true;
 }
 
 ?>
@@ -105,8 +106,8 @@ if (isset($_POST['email'])) {
 		@media(max-width: 584px){
 			.container{
 			max-width: 100%;
+			}
 		}
-
 		
 		
 	</style>
@@ -115,6 +116,12 @@ if (isset($_POST['email'])) {
 <div id="content">
 <img id="img" src="static/images/logo.png" />
 <h1 style="color: white;" id="msg">COMING SOON...</h1>
+
+<?php 
+
+	if ($show) echo "<h1 style='color: green; font-size: 20px;'>Thanks for subscribing!</h2>";
+
+?>
 
 <form action="" method="POST">
 <input type="email" name="email" placeholder="Insert your email to be notified on release" />
