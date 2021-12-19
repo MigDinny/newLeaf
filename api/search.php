@@ -32,7 +32,7 @@ if(!isset($_GET['type']) || !isset($_GET['course_id'])){
 } 
 
 //Gets values
-$type = strtoupper($_GET['type']);
+$type = strtolower($_GET['type']);
 $course_id = $_GET['course_id'];
 
 //Checks if course_id could be valid
@@ -41,7 +41,7 @@ if(!intval($course_id) || $course_id < 0){
 }
 
 //Checks if the type is valid out of 3 options (RESEARCH, JOB, INTERNSHIP)
-if($type != "RESEARCH" && $type != "INTERNSHIP" && $type != "JOB"){
+if($type != "research" && $type != "internship" && $type != "job"){
     error();
 }
 
@@ -108,8 +108,6 @@ if(isset($_GET['graduation_requirements'])){
 
 }
 
-//for testing purposes
-//echo $query;
 
 //Executes sql command and converts array to json.
 $data = DB::query($query);
