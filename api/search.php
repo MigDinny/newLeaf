@@ -16,6 +16,7 @@
 require_once '../settings.php';
 
 
+
 //Variables. Query has the query text.
 $query = "SELECT * FROM "; 
 
@@ -26,14 +27,16 @@ function error(){
 }
 
 
+
 //Checks if the obligatory GET arguments exist
 if(!isset($_GET['type']) || !isset($_GET['course_id'])){
     error();
 } 
 
-//Gets values
+
 $type = strtolower($_GET['type']);
 $course_id = $_GET['course_id'];
+
 
 //Checks if course_id could be valid
 if(!intval($course_id) || $course_id < 0){
