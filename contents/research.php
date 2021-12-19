@@ -67,6 +67,6 @@
 <script>
 
 // call for the first time
-fetchData("research",3,300,null,null,null);
+fetchData("research",2,300,null,null,null);
 
 </script>
