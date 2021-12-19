@@ -1,7 +1,5 @@
 <div class="text">Criar Oferta</div>
 <div id="create-offer" class="page-content">
-
-
   <div class="container">
     <div class="title">Informação da oferta</div>
     <div class="content">
@@ -17,9 +15,10 @@
           </div>
           <div class="input-box">
             <span class="details">Salário</span>
-            <input name="salary" type="text" placeholder="Introduza o valor mensal" required>
+            <input name="salary" type="number" placeholder="Introduza o valor mensal em euros" required>
           </div>
           <div class="contract-details input-box">
+
             <input type="radio" name="contract" id="dot-1">
             <input type="radio" name="contract" id="dot-2">
             <span class="contract-title">Contrato</span>
@@ -57,15 +56,18 @@
               <option value="1" >Estágio</option>
               <option value="2">Bolsa</option>
           </select>
+
           </div>
         </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
+
             <textarea name = "benefits" rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
           </div>
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
             <textarea name = "description" rows="4" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
+
           </div>
         </div>
         <div class="button">

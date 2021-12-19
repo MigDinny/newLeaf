@@ -5,17 +5,9 @@
   box-sizing: border-box;
   font-family: 'Poppins','Sora',sans-serif; 
 }
-/*
-body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  background: linear-gradient(135deg, #E4E9F7, #E4E9F7);
-}*/
+
 .container{
-  max-width: 1400px;
+  max-width: 100%;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
