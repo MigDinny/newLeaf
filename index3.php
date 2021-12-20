@@ -114,7 +114,7 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Setting</span>
      </li>
-    -->
+    
      <li class="profile">
          <div class="profile-details">
            <img src="static/images/user-profile.jpg" alt="profileImg">
@@ -125,7 +125,7 @@ require_once 'settings.php';
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
      </li>
-    
+    -->
     </ul>
     
 </div>
