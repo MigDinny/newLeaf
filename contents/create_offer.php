@@ -25,7 +25,15 @@
 
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea name = "description" rows="8" cols="270" placeholder="Introduza a descrição completa da oferta" required></textarea>
+            <textarea name = "description" rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
 
           <div class="input-box2">
@@ -57,7 +65,15 @@
           <div class="textarea" >
 
             <span class="details">Tipo de Oferta</span>
-              <select name="type">
+              <select name="type" required style="
+              width: 50%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 3px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;">
                 <option value="0"></option>
                 <option value="1">Emprego</option>
                 <option value="2">Estágio</option>
@@ -66,7 +82,15 @@
             </div>
           <div class="textarea" >
           <span class="details">Área</span>
-            <select name="course_id">
+            <select name="course_id" required style="
+              width: 50%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 3px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;">
               <option value="0" ></option>
               <option value="1" >Direito</option>
               <option value="2" >Engenharia Eletrotécnica</option>
@@ -80,7 +104,15 @@
 
             <div class="textarea" >
             <span class="details">Modo</span>
-              <select name="remote">
+              <select name="remote" required style="
+              width: 50%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 3px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;">
                 <option value="0"></option>
                 <option value="1">Remoto</option>
                 <option value="2">Presencial</option>
@@ -90,7 +122,15 @@
 
             <div class="textarea" >
             <span class="details">Requisitos</span>
-              <select name="requisites">
+              <select name="requisites" required style="
+              width: 50%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 3px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;">
                 <option value="0" ></option>
                 <option value="1" >A fazer licenciatura</option>
                 <option value="2">Licenciatura</option>
