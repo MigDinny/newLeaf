@@ -65,7 +65,6 @@ if( isset( $_POST['submit'])){
                 'company' => $company,
                 'graduation_requirements' => 'University',
                 'remote' => 'remote',
-                'creation_timestamp' => $date->format('D M d, Y G:i'),
                 'location' => 'Miranda',
                 'course_id' =>  2
             ]);
@@ -79,7 +78,6 @@ if( isset( $_POST['submit'])){
                 'company' => $company,
                 'graduation_requirements' => 'University',
                 'remote' => 'remote',
-                'creation_timestamp' => $date->format('D M d, Y G:i'),
                 'location' => 'Miranda',
                 'course_id' =>  2
             ]);
@@ -93,7 +91,6 @@ if( isset( $_POST['submit'])){
                 'company' => $company,
                 'graduation_requirements' => 'University',
                 'remote' => 'remote',
-                'creation_timestamp' => $date->format('D M d, Y G:i'),
                 'location' => 'Miranda',
                 'course_id' =>  2
             ]);
