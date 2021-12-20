@@ -10,7 +10,7 @@ $research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id
 
 <div id="homepage-centered">
     <!--<h1 style="font-weight: 300; font-size: 40px;">newLeaf</h1>-->
-    <img src="static/images/logo.png" style="height: 150px;"/>
+    <img id="logo_homepage" src="static/images/logo.png"/>
     <br><br>
     
     <div style="width: 25%; min-width: 250px;">

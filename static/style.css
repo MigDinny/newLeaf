@@ -114,3 +114,17 @@ a {
 .card:hover {
     background-color: rgb(207, 207, 207);
 }
+
+
+
+/* HOMEPAGE */
+#logo_homepage {
+    width: 400px;
+}
+
+@media only screen and (orientation: portrait) {
+    #logo_homepage {
+        width: 75%;
+    }
+    
+}
