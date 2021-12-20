@@ -7,7 +7,7 @@ require_once 'settings.php';
 <html>
 <head>
 
-	<title>PGI Project</title>
+	<title>newLeaf</title>
 	<link rel="stylesheet" type="text/css" href="static/style.css" />
 
 	<!-- Sidebar styles -->
