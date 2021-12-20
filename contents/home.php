@@ -2,11 +2,16 @@
 
 $course_list = DB::query("SELECT * FROM course;");
 
+$job_count = DB::queryFirstRow("SELECT count(id) FROM job;")['count(id)'];
+$internship_count = DB::queryFirstRow("SELECT count(id) FROM internship;")['count(id)'];
+$research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id)'];
+
 ?>
 
 <div id="homepage-centered">
-    <h1 style="font-weight: 300; font-size: 40px;">EstagIO</h1>
-    <br>
+    <!--<h1 style="font-weight: 300; font-size: 40px;">newLeaf</h1>-->
+    <img src="static/images/logo.png" style="height: 150px;"/>
+    <br><br>
     
     <div style="width: 25%; min-width: 250px;">
         <select id="select-search-course" onchange="selectCourse(this);">
@@ -39,8 +44,7 @@ $course_list = DB::query("SELECT * FROM course;");
                 <a href="?section=jobs">
                     <div class="card">
                         <h3>Empregos</h3>
-                        <p>93 Propostas</p>
-                        <p>Some text</p>
+                        <p><?= $job_count ?> Propostas</p>
                     </div>
                 </a>
             </div>
@@ -50,8 +54,7 @@ $course_list = DB::query("SELECT * FROM course;");
                 <a href="?section=internships">
                     <div class="card">
                         <h3>Estágios</h3>
-                        <p>159 Propostas</p>
-                        <p>Some text</p>
+                        <p><?= $internship_count ?> Propostas</p>
                     </div>
                 </a>
             </div>
@@ -60,8 +63,7 @@ $course_list = DB::query("SELECT * FROM course;");
                 <a href="?section=research">
                     <div class="card">
                         <h3>Investigação</h3>
-                        <p>65 Propostas</p>
-                        <p>Some text</p>
+                        <p><?= $research_count ?> Propostas</p>
                     </div>
                 </a>
             </div>
