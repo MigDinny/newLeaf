@@ -71,7 +71,7 @@ require_once 'settings.php';
      
      <li>
        <a href="?section=about">
-         <i class='bx bx-list-plus' ></i>
+         <i class='bx bx-error-circle' ></i>
          <span class="links_name">Sobre nós</span>
        </a>
        <span class="tooltip">Sobre nós</span>
@@ -90,22 +90,23 @@ require_once 'settings.php';
          <span class="links_name">File Manager</span>
        </a>
        <span class="tooltip">Files</span>
-     </li>
-     
+     </li>-->
+     <!--
      <li>
        <a href="#">
          <i class='bx bx-heart' ></i>
          <span class="links_name">Saved</span>
        </a>
        <span class="tooltip">Saved</span>
-     </li>
+     </li>-->
+    <!-- 
      <li>
        <a href="#">
          <i class='bx bx-cog' ></i>
          <span class="links_name">Setting</span>
        </a>
        <span class="tooltip">Setting</span>
-     </li>
+     </li>-->
      <li class="profile">
          <div class="profile-details">
            <img src="static/images/user-profile.jpg" alt="profileImg">
@@ -116,7 +117,7 @@ require_once 'settings.php';
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
      </li>
-    -->
+    
     </ul>
     
 </div>
