@@ -80,7 +80,6 @@ function updateData(jsonResponseObj, section, test) {
     let li;
 
     jsonResponseObj.forEach((row, index) => {
-        console.log(row);
         innerHTML = "";
 
         // add HTML row to the content
@@ -88,7 +87,7 @@ function updateData(jsonResponseObj, section, test) {
         innerHTML += "<span><b>Localização:</b> " + row.location + "</span><br>";
         innerHTML += "<span><b>Empresa:</b> " + row.company + "</span><br>";
         innerHTML += "<span><b>Salário bruto:</b> " + row.salary + "</span><br>";
-        innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements.name + "</span><br>";
+        innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements[1] + "</span><br>";
         innerHTML += "<span><b>Remote: </b> " + row.remote + "</span><br>";
 
         // create element

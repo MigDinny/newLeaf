@@ -61,7 +61,6 @@
         $data = DB::query($query);
         $toJson = json_encode($data);
         echo $toJson;
-        //echo $query;
 
         die();
     }
@@ -74,9 +73,9 @@
         //Checks if the value is valid
         if($salary < 0  || !intval($salary)){
             //printAll();
-        }// else if ($salary > 0) {
-            //$query .= " AND salary >= " . $salary;
-        //}
+        } else if ($salary > 0) {
+            $query .= " AND salary >= " . $salary;
+        }
 
         
         
@@ -98,40 +97,31 @@
          //Checks if the value is valid
          if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
             //printAll();
+        } else {
+            $query .= " AND upper(remote) = '$remote' ";
         }
-
-        $query .= " AND upper(remote) = '$remote' ";
         
 
     }
 
     //Checks to see if there is graduation requirements filter and applies it
-    if(isset($_GET['graduation_requirements'])){
-     
-        //$graduation_requirements = $_GET['graduation_requirements'];
-
-        //$query .= " AND graduation_requirements = '$graduation_requirements'";
-
+    if ($graduation_requirements > 0) {
+        $query .= " AND graduation_id <= $graduation_requirements";
     }
+        
+
 
     //for testing purposes
     //echo $query;
 
     //Executes sql command and converts array to json.
     $data = DB::query($query);
-    //$temp = json_encode($data);
-    //echo $temp;
     $out_array = [];
 
     //Get course name
     $query_temp = "SELECT * FROM course WHERE id =" .$course_id;
     $course_data = DB::query($query_temp);
     $course_name = $course_data[0]["name"];
-
-    //Get graduation name
-    $query_aux = "SELECT * FROM graduation_level WHERE id = " .$graduation_requirements;
-    $graduation_data = DB::query($query_aux);
-    $graduation_name = $graduation_data[0]["name"];
 
     //Makes the end string be in the correct format
     for ($i = 0; $i < count($data); $i++){
@@ -140,17 +130,29 @@
                    "name" => $data[$i]["name"], 
                    "salary" => $data[$i]["salary"], 
                    "details" =>$data[$i]["details"], 
-                   "company" => $data[$i]["company"], 
-                   "graduation_requirements" => $graduation_name, 
+                   "company" => $data[$i]["company"],  
+                   "graduation_requirements" => array($data[$i]["graduation_id"], findGraduationName($data[$i]["graduation_id"])),
                    "remote" => $data[$i]["remote"], 
                    "creation_timestamp" => $data[$i]["creation_timestamp"], 
                    "location" => $data[$i]["location"], 
-                   "course" =>  $course_name));                   //"course" => array($data[$i]["course_id"], $course_name)));
+                   "course" =>  array($data[$i]["course_id"], $course_name)));
 
 
     }
     $toJson = json_encode($out_array);
     echo $toJson;
-    //echo $query;
+    
+    // finds the graduation name of an offer
+    function findGraduationName($graduation_id) {
+        if (intval($graduation_id) && $graduation_id > 0) {
+            $query_aux = "SELECT name FROM graduation_level WHERE id = " .$graduation_id;
+            $graduation_data = DB::query($query_aux);
+            $graduation_name = $graduation_data[0]["name"];
+
+            return $graduation_name;
+        }
+
+        return "null";
+    }
 
 ?>
