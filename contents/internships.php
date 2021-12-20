@@ -5,7 +5,6 @@ $courses = DB::query($query_courses);
 $query_graduations= "SELECT * FROM graduation_level;";
 $graduations = DB::query($query_graduations);
 
-
 ?>
 
 <div class="text">Internships</div>
@@ -14,6 +13,7 @@ $graduations = DB::query($query_graduations);
 <!-- Filters -->
 <!--Current filters: type (obligatory), course id, salary, location, remoteness(?) and graduation requirements -->
 <div class="button">
+
     <label for="filters">Área:</label>
     <select name="filters" id="course">
     
@@ -26,7 +26,7 @@ $graduations = DB::query($query_graduations);
     </select>
 
     <label for="filters">Salário:</label>
-    <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir valor" required>
+    <input name="salary" id="salary" style="margin-left: 0px" type="text" placeholder="Introduzir valor">
 
     <!--<label for="filters">Localização:</label>
     <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir cidade" required>-->
@@ -35,7 +35,7 @@ $graduations = DB::query($query_graduations);
     <select name="filters" id="remote">
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
-    <option value="non-remote">Não</option>
+    <option value="none">Não</option>
     <option value="all">Qualquer um</option>
     </select>
 
@@ -49,8 +49,8 @@ $graduations = DB::query($query_graduations);
     ?>
     <option value="none">Qualquer um</option>
     </select>
-
-    <input style="margin-left: 20px" type="submit" value="Submeter">
+    
+    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('internship', course.value, null)">
 </div>
 
 
@@ -82,6 +82,6 @@ $graduations = DB::query($query_graduations);
 <script>
 // call for the first time
 
-fetchData("internship",2,300,null,null,null);
+fetchData("internship", course.value, null);
 
 </script>
