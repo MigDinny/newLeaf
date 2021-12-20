@@ -35,15 +35,39 @@
         </div>
           <div class="textarea">
             <span class="details">Requisitos</span>
-            <textarea rows="5" cols="10000" placeholder="Requisitos necessários para os aplicantes" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Requisitos necessários para os aplicantes" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
-            <textarea rows="5" cols="10000" placeholder="Benefícios que dispõe" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Benefícios que dispõe" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
         </div>
         <div class="button">
