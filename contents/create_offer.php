@@ -55,6 +55,7 @@
 
           <div class = "input-box">
           <div class="textarea" >
+
             <span class="details">Tipo de Oferta</span>
               <select name="type">
                 <option value="0"></option>
@@ -104,6 +105,20 @@
             
             
             
+            <!-- Catré modi apagada
+          <div class="textarea1">
+            <span class="details">Descrição da oferta:</span>
+            <textarea name = "description" rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
+            -->
+
           </div>
           
         </div>
