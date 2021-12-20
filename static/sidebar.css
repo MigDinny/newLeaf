@@ -35,6 +35,7 @@
   color: #fff;
   font-size: 20px;
   font-weight: 600;
+  padding: 15px;
   opacity: 0;
   transition: all 0.5s ease;
 }
@@ -44,7 +45,7 @@
 }
 .sidebar .logo-details #btn{
   position: absolute;
-  top: 30%;
+  top: 47%;
   right: 0;
   transform: translateY(-50%);
   font-size: 22px;
@@ -244,6 +245,42 @@
   font-size: 25px;
   font-weight: 300;
 }
+
+
+.sidebar li.logo-up{
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  top: -8px;
+  padding: 10px 14px;
+  background: #2a3b43;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidebar.open li.logo-up{
+  width: 250px;
+}
+.sidebar li .logo-up-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidebar li.logo-up .name{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+
+
 @media (max-width: 420px) {
   .sidebar li .tooltip{
     display: none;

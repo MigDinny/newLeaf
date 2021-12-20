@@ -28,10 +28,26 @@ require_once 'settings.php';
 <body>
 
 <!-- SIDEBAR (common) -->
-<div class="sidebar">
+  <div class="sidebar">
+      <!--<div class="logo">
+        <div class="logo-details">
+          <img src="static/images/azul2.png" alt="logoImg">
+          <div class="name_job">
+            <div class="name"></div>
+          </div>
+        </div>
+
+         
+      </div>-->
+
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">newLeaf</div>
+        <div class="logo_name">
+        <a href="/" style = "color: #fff">
+        <img src="static/images/logo.png" alt="logoImg" style="height: 50px;vertical-align: middle;margin-right: 10px;"/>
+        <span> newLeaf  </span>
+        </a>
+
+        </div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -104,7 +120,8 @@ require_once 'settings.php';
          <span class="links_name">Setting</span>
        </a>
        <span class="tooltip">Setting</span>
-     </li>-->
+     </li>
+    -->
      <li class="profile">
          <div class="profile-details">
            <img src="static/images/user-profile.jpg" alt="profileImg">
