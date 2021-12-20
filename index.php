@@ -68,6 +68,14 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Criar oferta</span>
      </li>
+     
+     <li>
+       <a href="?section=about">
+         <i class='bx bx-list-plus' ></i>
+         <span class="links_name">Sobre nós</span>
+       </a>
+       <span class="tooltip">Sobre nós</span>
+     </li>
      <!-- 
      <li>
        <a href="#">
@@ -83,7 +91,7 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Files</span>
      </li>
-     -->
+     
      <li>
        <a href="#">
          <i class='bx bx-heart' ></i>
@@ -108,7 +116,9 @@ require_once 'settings.php';
          </div>
          <i class='bx bx-log-out' id="log_out" ></i>
      </li>
+    -->
     </ul>
+    
 </div>
 
 
