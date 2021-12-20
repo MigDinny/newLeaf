@@ -23,27 +23,27 @@ $graduations = DB::query($query_graduations);
     </select>
 
     <label for="filters">Salário:</label>
-    <input name="salary" id="salary" style="margin-left: 0px" type="text" placeholder="Introduzir valor">
+    <input name="salary" id="salary" style="margin-left: 0px" type="number" placeholder="Introduzir valor">
 
     <!--<label for="filters">Localização:</label>
     <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir cidade" required>-->
 
     <label for="filters">Remoto:</label>
     <select name="filters" id="remote">
+    <option value="all">Qualquer um</option>
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
     <option value="none">Não</option>
-    <option value="all">Qualquer um</option>
     </select>
 
     <label for="filters">Grau Escolaridade:</label>
     <select name="filters" id="grad-req">
+    <option value="none">Qualquer um</option>
     <?php
     foreach ($graduations as $graduation) {
         echo "<option value=" . $graduation['id'] . " >" . $graduation['name'] . "</option>";
     }
     ?>
-    <option value="none">Qualquer um</option>
     </select>
 
     <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('job', course.value, null)">
