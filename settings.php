@@ -9,6 +9,8 @@ $production = false;
 DB::$user = 'root';
 DB::$password = '';
 DB::$dbName = 'pgi';
+DB:: $encoding = 'utf8';
+
 
 // set values for production if ENV is defined
 

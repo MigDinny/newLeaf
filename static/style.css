@@ -10,6 +10,7 @@ h1 {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 #navbar {
@@ -46,4 +47,84 @@ a {
 .filter {
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
+}
+
+#homepage-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+#select-search-course {
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+#select-search-course:focus { 
+    border-color: #505050;
+}
+
+
+
+/* CARDS */
+
+/* Float four columns side by side */
+.card-column {
+    float: left;
+    width: 275px;
+    padding: 0 10px;
+}
+  
+/* Remove extra left and right margins, due to padding */
+.card-row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.card-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .card-column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+}
+
+.card:hover {
+    background-color: rgb(207, 207, 207);
+}
+
+
+
+/* HOMEPAGE */
+#logo_homepage {
+    width: 400px;
+}
+
+@media only screen and (orientation: portrait) {
+    #logo_homepage {
+        width: 75%;
+    }
+    
 }
