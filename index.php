@@ -71,7 +71,7 @@ require_once 'settings.php';
      
      <li>
        <a href="?section=about">
-         <i class='bx bx-error-circle' ></i>
+         <i class='bx bx-info-circle' ></i>
          <span class="links_name">Sobre nós</span>
        </a>
        <span class="tooltip">Sobre nós</span>
@@ -90,16 +90,14 @@ require_once 'settings.php';
          <span class="links_name">File Manager</span>
        </a>
        <span class="tooltip">Files</span>
-     </li>-->
-     <!--
+     </li>
      <li>
        <a href="#">
          <i class='bx bx-heart' ></i>
          <span class="links_name">Saved</span>
        </a>
        <span class="tooltip">Saved</span>
-     </li>-->
-    <!-- 
+     </li>
      <li>
        <a href="#">
          <i class='bx bx-cog' ></i>
