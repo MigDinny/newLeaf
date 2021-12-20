@@ -25,18 +25,18 @@
 
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea name = "description" rows="10" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
+            <textarea name = "description" rows="8" cols="270" placeholder="Introduza a descrição completa da oferta" required></textarea>
           </div>
 
           <div class="input-box2">
             <span class="details">Inicio</span>
-            <input name="salary" type="month" placeholder="Data de inicio" required>
+            <input name="start_date" type="month" placeholder="Data de inicio" required>
             <span class="details">Fim</span>
-            <input name="salary" type="month" placeholder="Data de fim" required>
+            <input name="end_date" type="month" placeholder="Data de fim" required>
           </div>
 
           
-          <!-- This is 
+          <!-- ??????????????
 	        
           <div class="contract-details input-box">
 
@@ -55,8 +55,17 @@
 
           <div class = "input-box">
           <div class="textarea" >
+            <span class="details">Tipo de Oferta</span>
+              <select name="type">
+                <option value="0"></option>
+                <option value="1">Emprego</option>
+                <option value="2">Estágio</option>
+                <option value="3">Bolsa</option>
+            </select>
+            </div>
+          <div class="textarea" >
           <span class="details">Área</span>
-            <select name="requisites">
+            <select name="course_id">
               <option value="0" ></option>
               <option value="1" >Direito</option>
               <option value="2" >Engenharia Eletrotécnica</option>
@@ -67,8 +76,17 @@
               <option value="7">Outro</option>
             </select>
             </div>
-          </div>
-          <div class = "input-box">
+
+            <div class="textarea" >
+            <span class="details">Modo</span>
+              <select name="remote">
+                <option value="0"></option>
+                <option value="1">Remoto</option>
+                <option value="2">Presencial</option>
+                <option value="3">Híbrido</option>
+            </select>
+            </div>
+
             <div class="textarea" >
             <span class="details">Requisitos</span>
               <select name="requisites">
@@ -79,21 +97,13 @@
                 <option value="4">Mestrado</option>
                 <option value="5">A fazer doutoramento</option>
                 <option value="5">Doutoramento</option>
+                <option value="6">Irrelevante</option>
             </select>
             </div>
-          </div>
-        
-        
-          <div class = "input-box">
-            <div class="textarea" >
-            <span class="details">Tipo de Oferta</span>
-              <select name="type">
-                <option value="0" >Emprego</option>
-                <option value="1" >Estágio</option>
-                <option value="2">Bolsa</option>
-            </select>
 
-            </div>
+            
+            
+            
           </div>
           
         </div>
@@ -115,8 +125,25 @@ if (isset($_GET['result'])) {
       break;
 
     case 1:
-      echo "<script>alert('Por favor ponha inteiros no campo do salário.');</script>";
+      echo "<script>alert('Por favor coloque inteiros no campo do salário.');</script>";
       break;
+
+    case 2:
+      echo "<script>alert('Por preencha o campo \"Requisitos\".');</script>";
+      break;
+
+    case 3:
+      echo "<script>alert('Por preencha o campo \"Tipo de Oferta\".');</script>";
+      break;
+
+    case 4:
+      echo "<script>alert('Por preencha o campo \"Modo\".');</script>";
+      break;
+    
+    case 5:
+      echo "<script>alert('Por preencha o campo \"Area\".');</script>";
+      break;
+    
 
     default:
       echo "<script>alert('Um erro inesperado ocorreu. Contacte o administrador.');</script>";

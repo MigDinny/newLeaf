@@ -89,6 +89,7 @@ form .input-box2 span.details{
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
+  display: inline-block;
 }
 
 form .user-details .textarea{
