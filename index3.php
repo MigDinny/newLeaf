@@ -43,7 +43,7 @@ require_once 'settings.php';
     <div class="logo-details">
         <div class="logo_name">
         <a href="/" style = "color: #fff">
-        <img src="static/images/logo.png" alt="logoImg" style="height: 50px;vertical-align: middle;margin-right: 10px;"/>
+        <img src="static/images/logo-min.png" alt="logoImg" style="height: 50px;vertical-align: middle;margin-right: 10px;"/>
         <span> newLeaf  </span>
         </a>
 

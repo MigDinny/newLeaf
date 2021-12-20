@@ -20,7 +20,7 @@
 
     <label for="filters">Remoto:</label>
     <select name="filters" id="remote">
-    <option value="full" >Completamente remoto</option>
+    <option value="full" >Completamente</option>
     <option value="hybrid">Híbrido</option>
     <option value="non-remote">Não</option>
     </select>
@@ -28,8 +28,11 @@
     <label for="filters">Grau Escolaridade:</label>
     <select name="filters" id="grad-req">
     <option value="doctorate">Doutouramento</option>
+    <option value="doctorate">A tirar doutouramento</option>
     <option value="master">Mestrado</option>
-    <option value="bashelor">Licenciatura</option>    
+    <option value="tmaster">A tirar mestrado</option>
+    <option value="bashelor">Licenciatura</option>
+    <option value="tbashelor">A tirar licenciatura</option>     
     <option value="highschool">10º - 12º Ano</option>
     <option value="basic-school">5º - 9º Ano</option>
     <option value="primary-school">1º - 4º ano</option>
@@ -67,6 +70,6 @@
 <script>
 
 // call for the first time
-fetchData("research",3,300,null,null,null);
+fetchData("research",2,300,null,null,null);
 
 </script>
