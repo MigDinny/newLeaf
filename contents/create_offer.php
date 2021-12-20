@@ -17,16 +17,33 @@
             <span class="details">Salário</span>
             <input name="salary" type="number" placeholder="Introduza o valor mensal em euros" required>
           </div>
+
+          <div class="input-box">
+            <span class="details">Localização</span>
+            <input name="location" type="text" placeholder="Coimbra" required>
+          </div>
+
+          <div class="textarea1">
+            <span class="details">Descrição da oferta:</span>
+            <textarea name = "description" rows="10" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
+          </div>
+
+          <div class="input-box2">
+            <span class="details">Inicio</span>
+            <input name="salary" type="month" placeholder="Data de inicio" required>
+            <span class="details">Fim</span>
+            <input name="salary" type="month" placeholder="Data de fim" required>
+          </div>
+
+          
+          <!-- This is 
+	        
           <div class="contract-details input-box">
 
             <input type="radio" name="contract" id="dot-1">
             <input type="radio" name="contract" id="dot-2">
             <span class="contract-title">Contrato</span>
-            <div class="category">
-              <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="contract">Sim</span>
-              <input name="duration" style="margin-left: 20px" type="text" placeholder="Duração" required>
+            
             </label>
             <label for="dot-2">
               <span class="dot two"></span>
@@ -34,41 +51,51 @@
             </label>
             </div>
           </div>
-        <div class = "input-box">
+          -->
+
+          <div class = "input-box">
           <div class="textarea" >
-          <span class="details">Requisitos</span>
+          <span class="details">Área</span>
             <select name="requisites">
               <option value="0" ></option>
-              <option value="1" >A fazer licenciatura</option>
-              <option value="2">Licenciatura</option>
-              <option value="3">A fazer mestrado</option>
-              <option value="4">Mestrado</option>
-              <option value="5">A fazer doutoramento</option>
-              <option value="5">Doutoramento</option>
-          </select>
+              <option value="1" >Direito</option>
+              <option value="2" >Engenharia Eletrotécnica</option>
+              <option value="3">Engenharia Informática</option>
+              <option value="4">Engenharia Mecânica</option>
+              <option value="5">Medicina</option>
+              <option value="6">Relações Internacionais</option>
+              <option value="7">Outro</option>
+            </select>
+            </div>
           </div>
-        </div>
-        <div class = "input-box">
-          <div class="textarea" >
-          <span class="details">Tipo de Oferta</span>
-            <select name="type">
-              <option value="0" >Emprego</option>
-              <option value="1" >Estágio</option>
-              <option value="2">Bolsa</option>
-          </select>
+          <div class = "input-box">
+            <div class="textarea" >
+            <span class="details">Requisitos</span>
+              <select name="requisites">
+                <option value="0" ></option>
+                <option value="1" >A fazer licenciatura</option>
+                <option value="2">Licenciatura</option>
+                <option value="3">A fazer mestrado</option>
+                <option value="4">Mestrado</option>
+                <option value="5">A fazer doutoramento</option>
+                <option value="5">Doutoramento</option>
+            </select>
+            </div>
+          </div>
+        
+        
+          <div class = "input-box">
+            <div class="textarea" >
+            <span class="details">Tipo de Oferta</span>
+              <select name="type">
+                <option value="0" >Emprego</option>
+                <option value="1" >Estágio</option>
+                <option value="2">Bolsa</option>
+            </select>
 
+            </div>
           </div>
-        </div>
-          <div class="textarea">
-            <span class="details">Benefícios</span>
-
-            <textarea name = "benefits" rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
-          </div>
-          <div class="textarea1">
-            <span class="details">Descrição da oferta:</span>
-            <textarea name = "description" rows="4" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
-
-          </div>
+          
         </div>
         <div class="button">
           <input type="submit" name="submit" value="Submeter">
