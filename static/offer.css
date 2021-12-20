@@ -164,7 +164,7 @@ form .textarea1 span.details{
 }
  #dot-1:checked ~ .category label .one,
  #dot-2:checked ~ .category label .two{
-   background: #2a3b43;
+   background: #11101D;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -185,7 +185,7 @@ form .textarea1 span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #2a3b43, #2a3b46);
+   background: linear-gradient(135deg, #11101d, #391058);
  }
 
  form .button input:hover{
