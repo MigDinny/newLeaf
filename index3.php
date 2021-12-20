@@ -35,12 +35,10 @@ require_once 'settings.php';
 
 <!-- SIDEBAR (common) -->
 <div class="sidebar">
-    
     <div class="logo-details">
-      <a href="/">
+      <i class='bx bxl-c-plus-plus icon'></i>
         <div class="logo_name">EstagIO</div>
-      </a>
-      <i class='bx bx-menu' id="btn" ></i>
+        <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
       <li>
