@@ -35,7 +35,7 @@
         </div>
           <div class="textarea">
             <span class="details">Requisitos</span>
-            <textarea rows="5" cols="10000" placeholder="Requesitos necessários para os aplicantes" required></textarea>
+            <textarea rows="5" cols="10000" placeholder="Requisitos necessários para os aplicantes" required></textarea>
           </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
