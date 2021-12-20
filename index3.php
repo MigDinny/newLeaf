@@ -77,13 +77,6 @@ require_once 'settings.php';
        </a>
        <span class="tooltip">Bolsas</span>
      </li>
-     <li>
-       <a href="?section=create_offer">
-         <i class='bx bx-list-plus' ></i>
-         <span class="links_name">Criar oferta</span>
-       </a>
-       <span class="tooltip">Criar oferta</span>
-     </li>
      
      <li>
        <a href="?section=about">
