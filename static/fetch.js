@@ -24,24 +24,26 @@ let d;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData(section, course_id_param, salary_param, location_param, remote_param, graduation_req_param) {
+function fetchData(section, course_id_param, location_param) {
     const url = "/api/search.php";
 
-    if(salary_param == undefined ){
-        salary_param = 0;
-    }
+    salary_param = parseInt(document.getElementById("salary").value) || 0;
+    remote_param = document.getElementById("remote").value.toUpperCase();
+    graduation_req_param = parseInt(document.getElementById("grad-req").value) || 0;
+    console.log(course_id_param, salary_param, remote_param, graduation_req_param);
 
     if( location_param == undefined ){
         location_param = "";
     }
 
+    /*
     if(remote_param == undefined){
         remote_param = "";
     }
 
     if(graduation_req_param == undefined){
         graduation_req_param = "";
-    }
+    }*/
 
     let get_params = {
         type: section,
@@ -66,6 +68,7 @@ function updateData(jsonResponseObj, section, test) {
     d = test;
     ul = document.getElementById("entry-list");
     obj = jsonResponseObj;
+    console.log(obj);
 
     // clear previous results
     ul.innerHTML = "";
@@ -81,7 +84,7 @@ function updateData(jsonResponseObj, section, test) {
         innerHTML += "<span><b>Localização:</b> " + row.location + "</span><br>";
         innerHTML += "<span><b>Empresa:</b> " + row.company + "</span><br>";
         innerHTML += "<span><b>Salário bruto:</b> " + row.salary + "</span><br>";
-        innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements + "</span><br>";
+        innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements[1] + "</span><br>";
         innerHTML += "<span><b>Remote: </b> " + row.remote + "</span><br>";
 
         // create element

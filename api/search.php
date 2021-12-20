@@ -33,9 +33,10 @@ if(!isset($_GET['type']) || !isset($_GET['course_id'])){
     error();
 } 
 
-
+//Gets values   
 $type = strtolower($_GET['type']);
 $course_id = $_GET['course_id'];
+$graduation_requirements = $_GET['graduation_requirements'];
 
 
 //Checks if course_id could be valid
@@ -73,10 +74,10 @@ if(isset($_GET['salary'])){
 
     //Checks if the value is valid
     if($salary < 0  || !intval($salary)){
-        printAll();
+        //printAll();
+    } else if ($salary > 0) {
+        $query .= " AND salary >= " . $salary;
     }
-
-    $query .= " AND salary >= " . $salary;
     
 }
 
@@ -95,20 +96,16 @@ if(isset($_GET['remote'])){
 
         //Checks if the value is valid
         if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
-        printAll();
-    }
-
-    $query .= " AND upper(remote) = '$remote' ";
+            //printAll();
+        } else {
+            $query .= " AND upper(remote) = '$remote' ";
+        }
 
 }
 
 //Checks to see if there is graduation requirements filter and applies it
-if(isset($_GET['graduation_requirements'])){
-    
-    $graduation_requirements = strtoupper($_GET['graduation_requirements']);
-
-    $query .= " AND upper(graduation_requirements) =  '$graduation_requirements' ";
-
+if ($graduation_requirements > 0) {
+    $query .= " AND graduation_id <= $graduation_requirements";
 }
 
 
@@ -129,7 +126,7 @@ for ($i = 0; $i < count($data); $i++){
                 "salary" => $data[$i]["salary"], 
                 "details" =>$data[$i]["details"], 
                 "company" => $data[$i]["company"], 
-                "graduation_requirements" => $data[$i]["graduation_requirements"], 
+                "graduation_requirements" => array($data[$i]["graduation_id"], findGraduationName($data[$i]["graduation_id"])),
                 "remote" => $data[$i]["remote"], 
                 "creation_timestamp" => $data[$i]["creation_timestamp"], 
                 "location" => $data[$i]["location"], 
@@ -138,5 +135,18 @@ for ($i = 0; $i < count($data); $i++){
 }
 $toJson = json_encode($out_array);
 echo $toJson;
+
+// finds the graduation name of an offer
+function findGraduationName($graduation_id) {
+    if (intval($graduation_id) && $graduation_id > 0) {
+        $query_aux = "SELECT name FROM graduation_level WHERE id = " .$graduation_id;
+        $graduation_data = DB::query($query_aux);
+        $graduation_name = $graduation_data[0]["name"];
+
+        return $graduation_name;
+    }
+
+    return "null";
+}
 
 ?>
