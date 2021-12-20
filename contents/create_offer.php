@@ -48,26 +48,42 @@
           </select>
           </div>
         </div>
-        <div class = "input-box">
-          <div class="textarea" >
-          <span class="details">Tipo de Oferta</span>
-            <select name="type">
-              <option value="0" >Emprego</option>
-              <option value="1" >Estágio</option>
-              <option value="2">Bolsa</option>
-          </select>
-
+          <div class="textarea">
+            <span class="details">Requisitos</span>
+            <textarea rows="5" cols="10000" placeholder="Requisitos necessários para os aplicantes" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
         </div>
           <div class="textarea">
             <span class="details">Benefícios</span>
-
-            <textarea name = "benefits" rows="4" cols="100" placeholder="Benefícios que dispõe" required></textarea>
+            <textarea name = "benefits"   rows="5" cols="10000" placeholder="Benefícios que dispõe" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
           <div class="textarea1">
             <span class="details">Descrição da oferta:</span>
-            <textarea name = "description" rows="4" cols="220" placeholder="Introduza a descrição completa da oferta" required></textarea>
-
+            <textarea name = "description" rows="5" cols="10000" placeholder="Introduza a descrição completa da oferta" required style="
+              width: 100%;
+              outline: none;
+              font-size: 16px;
+              border-radius: 5px;
+              padding: 15px;
+              border: 1px solid #ccc;
+              border-bottom-width: 2px;
+              transition: all 0.3s ease;"></textarea>
           </div>
         </div>
         <div class="button">
