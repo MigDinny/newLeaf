@@ -7,7 +7,7 @@ $graduations = DB::query($query_graduations);
 
 ?>
 
-<div class="text">Research Grants</div>
+<div class="text">Bolsas de investigação</div>
 <div id="research" class="page-content">
 
 <!-- Filters -->
