@@ -17,7 +17,8 @@ $graduations = DB::query($query_graduations);
     <select name="filters" id="course">
     <?php
     foreach ($courses as $course) {
-        echo "<option value=" . $course['id'] . " >" . $course['name'] . "</option>";
+        if ($course["id"] ==  $_COOKIE['selected_course']) echo "<option value=" . $course['id'] . " selected >" . $course['name'] . "</option>";
+        else echo "<option value=" . $course['id'] . " >" . $course['name'] . "</option>";
     }
     ?>
     </select>
