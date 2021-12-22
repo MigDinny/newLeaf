@@ -23,6 +23,8 @@ require_once 'settings.php';
   <!-- Offer creation Link -->
   <link rel="stylesheet" href="static/offer.css">
 
+  <link rel="stylesheet" href="static/about_us.css">
+
 </head>
 
 <body>
@@ -155,6 +157,10 @@ else {
       include "contents/jobs.php";
       break;
 
+    case 'about':
+      include "contents/about_us.php";
+      break;
+      
 		default:
 			include "contents/home.php";
 			break;

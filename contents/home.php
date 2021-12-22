@@ -34,7 +34,7 @@ $research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id
             ?>
         </select>
 
-
+       
        
     </div>
     <br>
