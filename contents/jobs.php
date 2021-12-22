@@ -34,7 +34,7 @@ $graduations = DB::query($query_graduations);
     <option value="all">Qualquer um</option>
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
-    <option value="none">Não</option>
+    <option value="none">Completamente presencial</option>
     </select>
 
     <label for="filters">Grau Escolaridade:</label>
