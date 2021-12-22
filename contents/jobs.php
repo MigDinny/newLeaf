@@ -7,7 +7,7 @@ $graduations = DB::query($query_graduations);
 
 ?>
 
-<div class="text">Trabalhos</div>
+<div class="text">Empregos</div>
 <div id="jobs" class="page-content">
 
 <!-- Filters -->
