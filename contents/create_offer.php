@@ -1,3 +1,6 @@
+<?php
+$course_list = DB::query("SELECT * FROM course;");
+?>
 <div class="text">Criar Oferta</div>
 <div id="create-offer" class="page-content">
   <div class="container">
@@ -91,14 +94,14 @@
               border: 1px solid #ccc;
               border-bottom-width: 2px;
               transition: all 0.3s ease;">
-              <option value="0" ></option>
-              <option value="1" >Direito</option>
-              <option value="2" >Engenharia Eletrotécnica</option>
-              <option value="3">Engenharia Informática</option>
-              <option value="4">Engenharia Mecânica</option>
-              <option value="5">Medicina</option>
-              <option value="6">Relações Internacionais</option>
-              <option value="7">Outro</option>
+              <?php
+               foreach ($course_list as $course) {
+
+                echo "<option value='" . $course['id']  . "' selected>" . $course['name'] . "</option>";
+                    $alreadySelected = true;
+
+              }
+              ?>
             </select>
             </div>
 

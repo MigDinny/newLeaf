@@ -47,13 +47,13 @@ if( isset( $_POST['submit'])){
 
     switch($remote){
         case 1:
-            $remote_value = "Remoto";
+            $remote_value = "FULL";
             break;
         case 2:
-            $remote_value = "Presencial";
+            $remote_value = "NONE";
             break;
         case 3:
-            $remote_value = "Hibrido";
+            $remote_value = "HYBRID";
             break;
         default:
             header("Location: /index3?section=create_offer&result=4"); 
