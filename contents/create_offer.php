@@ -1,5 +1,6 @@
 <?php
 $course_list = DB::query("SELECT * FROM course;");
+$graduation_list = DB::query("SELECT * FROM graduation_level;")
 ?>
 <div class="text">Criar Oferta</div>
 <div id="create-offer" class="page-content">
@@ -98,7 +99,7 @@ $course_list = DB::query("SELECT * FROM course;");
                foreach ($course_list as $course) {
 
                 echo "<option value='" . $course['id']  . "' selected>" . $course['name'] . "</option>";
-                    $alreadySelected = true;
+                    
 
               }
               ?>
@@ -134,14 +135,13 @@ $course_list = DB::query("SELECT * FROM course;");
               border: 1px solid #ccc;
               border-bottom-width: 2px;
               transition: all 0.3s ease;">
-                <option value="0" ></option>
-                <option value="1" >A fazer licenciatura</option>
-                <option value="2">Licenciatura</option>
-                <option value="3">A fazer mestrado</option>
-                <option value="4">Mestrado</option>
-                <option value="5">A fazer doutoramento</option>
-                <option value="5">Doutoramento</option>
-                <option value="6">Irrelevante</option>
+                <?php
+               foreach ($graduation_list as $grad) {
+
+                echo "<option value='" . $grad['id']  . "' selected>" . $grad['name'] . "</option>";
+        
+              }
+              ?>
             </select>
             </div>
 

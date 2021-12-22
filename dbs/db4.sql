@@ -39,53 +39,14 @@ CREATE TABLE IF NOT EXISTS `course` (
 --
 
 INSERT INTO `course` (`id`, `name`) VALUES
-(1, 'Yo'),
-(2, 'Informatica'),
-(3, 'Mecanica');
+(1, 'Direito'),
+(2, 'Engenharia Eletrotécnica'),
+(3, 'Engenharia Informática'),
+(4, 'Engenharia Mecânica'),
+(5, 'Medicina'),
+(6, 'Relações Internacionais'),
+(7, 'Outro');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `drinks`
---
-
-DROP TABLE IF EXISTS `drinks`;
-CREATE TABLE IF NOT EXISTS `drinks` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `drinks`
---
-
-INSERT INTO `drinks` (`id`, `name`) VALUES
-(1, 'white russian'),
-(2, 'vodka');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `food`
---
-
-DROP TABLE IF EXISTS `food`;
-CREATE TABLE IF NOT EXISTS `food` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `food`
---
-
-INSERT INTO `food` (`id`, `name`) VALUES
-(1, 'banana'),
-(2, 'orange'),
-(3, 'strawberry'),
-(4, 'ananas');
 
 -- --------------------------------------------------------
 
@@ -126,23 +87,16 @@ CREATE TABLE IF NOT EXISTS `internship` (
   `details` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `company` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `graduation_id` int UNSIGNED NOT NULL,
-  `remote` varchar(6) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `remote` varchar(11) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `course_id` int UNSIGNED NOT NULL,
+  `start_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `end_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`),
-  KEY `graduation_id` (`graduation_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Dumping data for table `internship`
---
-
-INSERT INTO `internship` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
-(1, 'Internship 1 ', 300, 'Very good yes yes', 'Edgar Company', 3, 'FULL', '2021-11-06 13:31:10', 'MiraNda', 1),
-(2, 'Internship 2', 3000, '123123124124124', 'Edgar Company 2', 3, 'NONE', '2021-11-06 13:31:42', 'Miranda Citty', 2),
-(4, 'Internship 3', 123, '2wwqwqwerwer', 'Edgar Company 2', 1, 'FULL', '2021-11-06 17:12:00', 'asas Miranda do Corvo', 2);
 
 -- --------------------------------------------------------
 
@@ -158,21 +112,16 @@ CREATE TABLE IF NOT EXISTS `job` (
   `details` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `company` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `graduation_id` int UNSIGNED NOT NULL,
-  `remote` varchar(6) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `remote` varchar(11) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `course_id` int UNSIGNED NOT NULL,
+  `start_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `end_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`),
-  KEY `graduation_id` (`graduation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Dumping data for table `job`
---
-
-INSERT INTO `job` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
-(1, 'Internship 4', 3000, 'ererrtg', 'Edgar Company 2', 2, 'FULL', '2021-11-06 17:28:24', '', 2);
 
 -- --------------------------------------------------------
 
@@ -188,21 +137,17 @@ CREATE TABLE IF NOT EXISTS `research` (
   `details` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `company` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `graduation_id` int UNSIGNED NOT NULL,
-  `remote` varchar(6) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `remote` varchar(11) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `course_id` int UNSIGNED NOT NULL,
+  `start_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `end_date` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`),
-  KEY `graduation_id` (`graduation_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Dumping data for table `research`
---
 
-INSERT INTO `research` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
-(1, 'OREOS', 3000, 'asdfasfsfasf bom', 'Edgar Company 3', 1, 'NONE', '2021-11-06 17:30:09', 'Cantanhede', 3);
 
 --
 -- Constraints for dumped tables
