@@ -2,13 +2,13 @@
 <div class="text">About Us</div>
 
   <div class="container">
-    <p> Já ouviste falar no LinkedIn? No Indeed? E no Glassdoor? A newLeaf pretende ser isso e muito mais.</p>
+    <p  style="text-align: justify;"> Já ouviste falar no LinkedIn? No Indeed? E no Glassdoor? A newLeaf pretende ser isso e muito mais.</p>
     <br>
-    <p>  Trata-se de uma plataforma web desenvolvida por 7 estudantes universitários do curso de Engenharia Informática, na Universidade de Coimbra, no âmbito da cadeira de Processos de Gestão e Inovação. A plataforma tem como âmbito facilitar e tornar mais eficiente a procura de propostas de emprego, estágios e bolsas de investigação, tudo a uma distância de cliques e com recurso a filtros e ferramentas modernizadas.</p>
+    <p  style="text-align: justify;">  Trata-se de uma plataforma web desenvolvida por 7 estudantes universitários do curso de Engenharia Informática, na Universidade de Coimbra, no âmbito da cadeira de Processos de Gestão e Inovação. A plataforma tem como âmbito facilitar e tornar mais eficiente a procura de propostas de emprego, estágios e bolsas de investigação, tudo a uma distância de cliques e com recurso a filtros e ferramentas modernizadas.</p>
     <br>
-    <p> Trata-se de um projeto em fase de desenvolvimento, pelo que muitas das funcionalidades presentes servem apenas, por enquanto, como base para apoiar e testar a ideia do projeto, e não para comercializá-lo ou substituir as outras plataformas já existentes.</p>
+    <p  style="text-align: justify;"> Trata-se de um projeto em fase de desenvolvimento, pelo que muitas das funcionalidades presentes servem apenas, por enquanto, como base para apoiar e testar a ideia do projeto, e não para comercializá-lo ou substituir as outras plataformas já existentes.</p>
     <br>
-    <p> Temos conhecimento do trabalho ainda por ser realizado, pelo que, neste momento, o vosso feedback é fulcral para nos apoiar enquanto estudantes e enquanto criadores do projeto.</p>
+    <p  style="text-align: justify;"> Temos conhecimento do trabalho ainda por ser realizado, pelo que, neste momento, o vosso feedback é fulcral para nos apoiar enquanto estudantes e enquanto criadores do projeto.</p>
     <br>
     <p><b>Membros:</b></p>
 
@@ -61,11 +61,17 @@
      <br>
      <br>
      <br>
+     <p><b>Contacto:</b> newleafdei@gmail.com</p>
      <p><b> Siganos também nas nossas redes sociais:</b></p>
-     <img src="/static/images/fb-logo.png" style= "clip-path: circle()"  alt="Error">
-          <p><b>Contactos:</b></p>
-
-     <p><b>Aviso legal: </b>os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina– Processos de gestão e
+          <a href = "https://www.facebook.com/newleafdei">
+          <img src="/static/images/fb-logo.png"  alt="Error">
+          </a>
+          <a href = "https://www.instagram.com/newleafdei/">
+          <img src="/static/images/intalogo.png" alt="Error">
+          </a>
+     <br>
+     <br>
+     <p  style="text-align: justify;"><b>Aviso legal: </b>os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina– Processos de gestão e
           Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
           Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.</p>
 </div>
