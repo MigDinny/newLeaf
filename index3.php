@@ -59,13 +59,6 @@ require_once 'settings.php';
     </div>
 
     <!-- function to find and get the value a cookie by the name-->
-    <script>
-      function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-      }
-    </script>
     <ul class="nav-list">
       <li>
           <i class='bx bx-search' ></i>
