@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 22-Dez-2021 às 18:07
+-- Tempo de geração: 22-Dez-2021 às 18:19
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -32,20 +32,37 @@ CREATE TABLE IF NOT EXISTS `course` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `course`
 --
 
 INSERT INTO `course` (`id`, `name`) VALUES
-(1, 'Direito'),
-(2, 'Engenharia Eletrotécnica'),
-(3, 'Engenharia Informática'),
-(4, 'Engenharia Mecânica'),
-(5, 'Medicina'),
-(6, 'Relações Internacionais'),
-(7, 'Outro');
+(1, 'Yo'),
+(2, 'Informatica'),
+(3, 'Mecanica');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `drinks`
+--
+
+DROP TABLE IF EXISTS `drinks`;
+CREATE TABLE IF NOT EXISTS `drinks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(16) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `drinks`
+--
+
+INSERT INTO `drinks` (`id`, `name`) VALUES
+(1, 'white russian'),
+(2, 'vodka');
 
 -- --------------------------------------------------------
 
@@ -70,6 +87,29 @@ CREATE TABLE IF NOT EXISTS `emails` (
 INSERT INTO `emails` (`id`, `email`, `timestamp`, `ua`, `ip`) VALUES
 (1, 'mikepro2013@gmail.com', '2021-12-16 00:00:00', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '::1'),
 (2, 'mikepro2013@gmail.com', '2021-12-16 00:00:00', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '::1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `food`
+--
+
+DROP TABLE IF EXISTS `food`;
+CREATE TABLE IF NOT EXISTS `food` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(16) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `food`
+--
+
+INSERT INTO `food` (`id`, `name`) VALUES
+(1, 'banana'),
+(2, 'orange'),
+(3, 'strawberry'),
+(4, 'ananas');
 
 -- --------------------------------------------------------
 
@@ -109,16 +149,24 @@ CREATE TABLE IF NOT EXISTS `internship` (
   `salary` int(10) UNSIGNED NOT NULL,
   `details` text COLLATE utf8_bin NOT NULL,
   `company` varchar(25) COLLATE utf8_bin NOT NULL,
-  `graduation_requirements` varchar(25) COLLATE utf8_bin NOT NULL,
-  `remote` varchar(11) COLLATE utf8_bin NOT NULL,
+  `graduation_id` int(10) UNSIGNED NOT NULL,
+  `remote` varchar(6) COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) COLLATE utf8_bin NOT NULL,
   `course_id` int(10) UNSIGNED NOT NULL,
-  `start_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `end_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`),
+  KEY `graduation_id` (`graduation_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `internship`
+--
+
+INSERT INTO `internship` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
+(1, 'Internship 1 ', 300, 'Very good yes yes', 'Edgar Company', 3, 'FULL', '2021-11-06 13:31:10', 'MiraNda', 1),
+(2, 'Internship 2', 3000, '123123124124124', 'Edgar Company 2', 3, 'NONE', '2021-11-06 13:31:42', 'Miranda Citty', 2),
+(4, 'Internship 3', 123, '2wwqwqwerwer', 'Edgar Company 2', 1, 'FULL', '2021-11-06 17:12:00', 'asas Miranda do Corvo', 2);
 
 -- --------------------------------------------------------
 
@@ -133,24 +181,22 @@ CREATE TABLE IF NOT EXISTS `job` (
   `salary` int(10) UNSIGNED NOT NULL,
   `details` text COLLATE utf8_bin NOT NULL,
   `company` varchar(25) COLLATE utf8_bin NOT NULL,
-  `graduation_requirements` varchar(25) COLLATE utf8_bin NOT NULL,
-  `remote` varchar(11) COLLATE utf8_bin NOT NULL,
+  `graduation_id` int(10) UNSIGNED NOT NULL,
+  `remote` varchar(6) COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) COLLATE utf8_bin NOT NULL,
   `course_id` int(10) UNSIGNED NOT NULL,
-  `start_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `end_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`),
+  KEY `graduation_id` (`graduation_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `job`
 --
 
-INSERT INTO `job` (`id`, `name`, `salary`, `details`, `company`, `graduation_requirements`, `remote`, `creation_timestamp`, `location`, `course_id`, `start_date`, `end_date`) VALUES
-(7, 'asd', 2134, 'asd', 'sad', '5', '2', '2021-12-20 17:49:36', 'asd', 4, '2021-02', '2021-11'),
-(8, 'asd', 123, 'asd', 'asd', '2', 'Presen', '2021-12-20 18:20:08', 'asd', 3, '2021-10', '2021-11');
+INSERT INTO `job` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
+(1, 'Internship 4', 3000, 'ererrtg', 'Edgar Company 2', 2, 'FULL', '2021-11-06 17:28:24', '', 2);
 
 -- --------------------------------------------------------
 
@@ -165,16 +211,22 @@ CREATE TABLE IF NOT EXISTS `research` (
   `salary` int(10) UNSIGNED NOT NULL,
   `details` text COLLATE utf8_bin NOT NULL,
   `company` varchar(25) COLLATE utf8_bin NOT NULL,
-  `graduation_requirements` varchar(25) COLLATE utf8_bin NOT NULL,
-  `remote` varchar(11) COLLATE utf8_bin NOT NULL,
+  `graduation_id` int(10) UNSIGNED NOT NULL,
+  `remote` varchar(6) COLLATE utf8_bin NOT NULL,
   `creation_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location` varchar(50) COLLATE utf8_bin NOT NULL,
   `course_id` int(10) UNSIGNED NOT NULL,
-  `start_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `end_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `course_id` (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `course_id` (`course_id`),
+  KEY `graduation_id` (`graduation_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Extraindo dados da tabela `research`
+--
+
+INSERT INTO `research` (`id`, `name`, `salary`, `details`, `company`, `graduation_id`, `remote`, `creation_timestamp`, `location`, `course_id`) VALUES
+(1, 'OREOS', 3000, 'asdfasfsfasf bom', 'Edgar Company 3', 1, 'NONE', '2021-11-06 17:30:09', 'Cantanhede', 3);
 
 --
 -- Restrições para despejos de tabelas
@@ -184,19 +236,22 @@ CREATE TABLE IF NOT EXISTS `research` (
 -- Limitadores para a tabela `internship`
 --
 ALTER TABLE `internship`
-  ADD CONSTRAINT `internship_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+  ADD CONSTRAINT `internship_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  ADD CONSTRAINT `internship_ibfk_2` FOREIGN KEY (`graduation_id`) REFERENCES `graduation_level` (`id`);
 
 --
 -- Limitadores para a tabela `job`
 --
 ALTER TABLE `job`
-  ADD CONSTRAINT `job_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+  ADD CONSTRAINT `job_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  ADD CONSTRAINT `job_ibfk_2` FOREIGN KEY (`graduation_id`) REFERENCES `graduation_level` (`id`);
 
 --
 -- Limitadores para a tabela `research`
 --
 ALTER TABLE `research`
-  ADD CONSTRAINT `research_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+  ADD CONSTRAINT `research_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  ADD CONSTRAINT `research_ibfk_2` FOREIGN KEY (`graduation_id`) REFERENCES `graduation_level` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
