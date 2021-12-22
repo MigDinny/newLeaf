@@ -7,7 +7,7 @@ $graduations = DB::query($query_graduations);
 
 ?>
 
-<div class="text">Trabalhos</div>
+<div class="text">Empregos</div>
 <div id="jobs" class="page-content">
 
 <!-- Filters -->
@@ -34,7 +34,7 @@ $graduations = DB::query($query_graduations);
     <option value="all">Qualquer um</option>
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
-    <option value="none">Não</option>
+    <option value="none">Completamente presencial</option>
     </select>
 
     <label for="filters">Grau Escolaridade:</label>

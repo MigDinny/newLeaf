@@ -7,7 +7,7 @@ $graduations = DB::query($query_graduations);
 
 ?>
 
-<div class="text">Internships</div>
+<div class="text">Estágios</div>
 <div id="internships" class="page-content">
 
 <!-- Filters -->
@@ -34,7 +34,7 @@ $graduations = DB::query($query_graduations);
     <option value="all">Qualquer um</option>
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
-    <option value="none">Não</option>
+    <option value="none">Completamente presencial</option>
 
     </select>
 
