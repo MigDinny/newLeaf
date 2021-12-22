@@ -47,7 +47,7 @@ $graduations = DB::query($query_graduations);
     ?>
     </select>
 
-    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('job', course.value, null)">
+    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('job')">
 </div>
 
 <!-- lista com as rows das cenas -->
@@ -62,6 +62,6 @@ $graduations = DB::query($query_graduations);
 <script>
 
 // call for the first time
-fetchData("job", course.value, null);
+fetchData("job");
 
 </script>
