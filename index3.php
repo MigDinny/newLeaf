@@ -17,6 +17,7 @@ if (isset($_GET['section'])) {
 
 	<title>newLeaf</title>
 	<link rel="stylesheet" type="text/css" href="static/style.css" />
+  <link rel="icon" href="static\images\logo-min.png">
 
 	<!-- Sidebar styles -->
 	<link rel="stylesheet" href="static/sidebar.css" />
@@ -38,6 +39,11 @@ if (isset($_GET['section'])) {
 
   <!-- Offer creation Link -->
   <link rel="stylesheet" href="static/offer.css">
+
+
+  <link rel="stylesheet" href="static/about_us.css">
+
+
 </head>
 
 <body>
@@ -57,6 +63,7 @@ if (isset($_GET['section'])) {
 
     <div class="logo-details">
         <div class="logo_name">
+        <!-- <a href="/index3.php" style = "color: #fff"> -->
         <a href="/" style = "color: #fff">
         <img src="static/images/logo-min.png" alt="logoImg" style="height: 50px;vertical-align: middle;margin-right: 10px;"/>
         <span> newLeaf  </span>
@@ -100,9 +107,9 @@ if (isset($_GET['section'])) {
           <li>
            <a href="?section=research">
              <i class=\'bx bx-archive\' ></i>
-             <span class="links_name">Bolsas</span>
+             <span class="links_name">Bolsas de investigação</span>
            </a>
-           <span class="tooltip">Bolsas</span>
+           <span class="tooltip">Bolsas de investigação</span>
          </li>';
         }
 
@@ -186,6 +193,10 @@ else {
       include "contents/jobs.php";
       break;
 
+    case 'about':
+      include "contents/about_us.php";
+      break;
+      
 		default:
 			include "contents/home.php";
 			break;

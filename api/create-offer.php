@@ -13,7 +13,7 @@ if( isset( $_POST['submit'])){
     $salary = $_POST['salary'];
 
     if(!intval($salary)){  
-        header("Location: /index3?section=create_offer&result=1"); 
+        header("Location: /index?section=create_offer&result=1"); 
         die();
     }
     
@@ -29,34 +29,34 @@ if( isset( $_POST['submit'])){
     $type = $_POST['type'];
     
     if(!$type){
-        header("Location: /index3?section=create_offer&result=3"); 
+        header("Location: /index?section=create_offer&result=3"); 
         die();
     }
 
     $course_id = $_POST['course_id'];
     if(!$course_id){
-        header("Location: /index3?section=create_offer&result=5"); 
+        header("Location: /index?section=create_offer&result=5"); 
         die();
     }
 
     $remote = $_POST['remote'];
     if(!$remote){
-        header("Location: /index3?section=create_offer&result=4"); 
+        header("Location: /index?section=create_offer&result=4"); 
         die();
     }
 
     switch($remote){
         case 1:
-            $remote_value = "Remoto";
+            $remote_value = "FULL";
             break;
         case 2:
-            $remote_value = "Presencial";
+            $remote_value = "NONE";
             break;
         case 3:
-            $remote_value = "Hibrido";
+            $remote_value = "HYBRID";
             break;
         default:
-            header("Location: /index3?section=create_offer&result=4"); 
+            header("Location: /index?section=create_offer&result=4"); 
             die();
     }
 
@@ -64,7 +64,7 @@ if( isset( $_POST['submit'])){
     $requisites = $_POST['requisites'];
 
     if(!$requisites){
-        header("Location: /index3?section=create_offer&result=2"); 
+        header("Location: /index?section=create_offer&result=2"); 
         die();
     }
 
@@ -80,7 +80,7 @@ if( isset( $_POST['submit'])){
                 'salary' => $salary,
                 'details' => $details,
                 'company' => $company,
-                'graduation_requirements' => $requisites,
+                'graduation_id' => $requisites,
                 'remote' => $remote_value,
                 'location' => $location,
                 'course_id' =>  $course_id,
@@ -95,7 +95,7 @@ if( isset( $_POST['submit'])){
                 'salary' => $salary,
                 'details' => $details,
                 'company' => $company,
-                'graduation_requirements' => $requisites,
+                'graduation_id' => $requisites,
                 'remote' => $remote_value,
                 'location' => $location,
                 'course_id' =>  $course_id,
@@ -110,7 +110,7 @@ if( isset( $_POST['submit'])){
                 'salary' => $salary,
                 'details' => $details,
                 'company' => $company,
-                'graduation_requirements' => $requisites,
+                'graduation_id' => $requisites,
                 'remote' => $remote_value,
                 'location' => $location,
                 'course_id' =>  $course_id,
@@ -121,7 +121,7 @@ if( isset( $_POST['submit'])){
 
     }
     
-    header("Location: /index3?section=create_offer&result=0");
+    header("Location: /index?section=create_offer&result=0");
 }
 
 
