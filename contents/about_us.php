@@ -2,9 +2,13 @@
 <div class="text">About Us</div>
 
   <div class="container">
-    <p> Somos a new Leaf uma inovadora plataforma de pesquisa de empregos. Aqui conseguirás encontrar o emprego dos teus sonhos.</p>
-    <p> A nossa missão é que os nossos clientes consigam encontrar os seus empregos de sonho facilmente.</p>
-    <p> Somos um grupo empenhado em garantir que dispomos 24/7 as melhores oportunidades para o teu futuro!</p>
+    <p> Já ouviste falar no LinkedIn? No Indeed? E no Glassdoor? A newLeaf pretende ser isso e muito mais.</p>
+    <br>
+    <p>  Trata-se de uma plataforma web desenvolvida por 7 estudantes universitários do curso de Engenharia Informática, na Universidade de Coimbra, no âmbito da cadeira de Processos de Gestão e Inovação. A plataforma tem como âmbito facilitar e tornar mais eficiente a procura de propostas de emprego, estágios e bolsas de investigação, tudo a uma distância de cliques e com recurso a filtros e ferramentas modernizadas.</p>
+    <br>
+    <p> Trata-se de um projeto em fase de desenvolvimento, pelo que muitas das funcionalidades presentes servem apenas, por enquanto, como base para apoiar e testar a ideia do projeto, e não para comercializá-lo ou substituir as outras plataformas já existentes.</p>
+    <br>
+    <p> Temos conhecimento do trabalho ainda por ser realizado, pelo que, neste momento, o vosso feedback é fulcral para nos apoiar enquanto estudantes e enquanto criadores do projeto.</p>
     <br>
     <p><b>Membros:</b></p>
 
@@ -56,6 +60,11 @@
      </div>
      <br>
      <br>
+     <br>
+     <p><b> Siganos também nas nossas redes sociais:</b></p>
+     <img src="/static/images/fb-logo.png" style= "clip-path: circle()"  alt="Error">
+          <p><b>Contactos:</b></p>
+
      <p><b>Aviso legal: </b>os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina– Processos de gestão e
           Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
           Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.</p>
