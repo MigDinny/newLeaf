@@ -1,6 +1,14 @@
 <?php
 require_once 'settings.php';
 
+// check course cookie and redirect 
+if (isset($_GET['section'])) {
+    if ($_GET['section'] == 'jobs' || $_GET['section'] == 'internships' || $_GET['section'] == 'research') {
+
+        if (!isset($_COOKIE['selected_course'])) header("Location: /?msg=not_selected");
+
+    }
+}
 
 ?>
 
@@ -65,28 +73,37 @@ require_once 'settings.php';
          <input type="text" placeholder="Search...">
          <span class="tooltip">Search</span>
       </li>
-      <li>
-        <a href="?section=jobs">
-          <i class='bx bx-briefcase'></i>
-          <span class="links_name">Empregos</span>
-        </a>
-         <span class="tooltip">Empregos</span>
-      </li>
-      <li>
-       <a href="?section=internships">
-         <i class='bx bxs-graduation' ></i>
-         <span class="links_name">Estágios</span>
-       </a>
-       <span class="tooltip">Estágios</span>
-     </li>      
-      <li>
-       <a href="?section=research">
-         <i class='bx bx-archive' ></i>
-         <span class="links_name">Bolsas de investigação</span>
-       </a>
-       <span class="tooltip">Bolsas de investigação</span>
-     </li>
-     
+
+
+      <?php
+
+        if (isset($_COOKIE['selected_course'])) {
+            echo '<li>
+            <a href="?section=jobs">
+              <i class=\'bx bx-briefcase\'></i>
+              <span class="links_name">Empregos</span>
+            </a>
+             <span class="tooltip">Empregos</span>
+          </li>
+          <li>
+           <a href="?section=internships">
+             <i class=\'bx bxs-graduation\' ></i>
+             <span class="links_name">Estágios</span>
+           </a>
+           <span class="tooltip">Estágios</span>
+         </li>      
+          <li>
+           <a href="?section=research">
+             <i class=\'bx bx-archive\' ></i>
+             <span class="links_name">Bolsas de investigação</span>
+           </a>
+           <span class="tooltip">Bolsas de investigação</span>
+         </li>';
+        }
+
+      ?>
+
+
      <li>
        <a href="?section=about">
          <i class='bx bx-info-circle' ></i>
