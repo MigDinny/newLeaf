@@ -41,7 +41,7 @@ $research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id
     <div class="card-row">
             <div class="card-column">
                 
-                <a href="?section=jobs">
+                <a href="?section=job">
                     <div class="card">
                         <h3>Empregos</h3>
                         <p><?= $job_count ?> Propostas</p>
@@ -51,7 +51,7 @@ $research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id
 
             <div class="card-column">
 
-                <a href="?section=internships">
+                <a href="?section=internship">
                     <div class="card">
                         <h3>Estágios</h3>
                         <p><?= $internship_count ?> Propostas</p>

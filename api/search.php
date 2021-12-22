@@ -33,10 +33,16 @@ if(!isset($_GET['type']) || !isset($_GET['course_id'])){
     error();
 } 
 
+//Checks if graduation_requirements and find_offers is defined
+if(!isset($_GET['graduation_requirements']) || !isset($_GET['find_offers'])){
+    error();
+}
+
 //Gets values   
 $type = strtolower($_GET['type']);
 $course_id = $_GET['course_id'];
 $graduation_requirements = $_GET['graduation_requirements'];
+$text_to_find = strtoupper($_GET['find_offers']);
 
 
 //Checks if course_id could be valid
@@ -67,46 +73,52 @@ function printAll(){
     die();
 }
 
-//Checks to see if there is salary filter
-if(isset($_GET['salary'])){
-    
-    $salary = $_GET['salary'];
+if (strlen($text_to_find) > 0) {
+    $query .= " AND (upper(name) LIKE '%$text_to_find%' OR upper(details) LIKE '%$text_to_find%' OR upper(company) LIKE '%$text_to_find%' OR upper(location) LIKE '%$text_to_find%') ";
 
-    //Checks if the value is valid
-    if($salary < 0  || !intval($salary)){
-        //printAll();
-    } else if ($salary > 0) {
-        $query .= " AND salary >= " . $salary;
-    }
-    
-}
-
-//Checks to see if there is location filter
-if(isset($_GET['location'])){
-    
-    $location = strtoupper($_GET['location']);
-
-    $query .= " AND upper(location) LIKE '%$location%' ";    
-}
-
-//Checks to see if there is remote filter
-if(isset($_GET['remote'])){
-    
-    $remote = strtoupper($_GET['remote']);
+} else {
+    //Checks to see if there is salary filter
+    if(isset($_GET['salary'])){
+        
+        $salary = $_GET['salary'];
 
         //Checks if the value is valid
-        if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
+        if($salary < 0  || !intval($salary)){
             //printAll();
-        } else {
-            $query .= " AND upper(remote) = '$remote' ";
+        } else if ($salary > 0) {
+            $query .= " AND salary >= " . $salary;
         }
+        
+    }
 
+    //Checks to see if there is location filter
+    if(isset($_GET['location'])){
+        
+        $location = strtoupper($_GET['location']);
+
+        $query .= " AND upper(location) LIKE '%$location%' ";    
+    }
+
+    //Checks to see if there is remote filter
+    if(isset($_GET['remote'])){
+        
+        $remote = strtoupper($_GET['remote']);
+
+            //Checks if the value is valid
+            if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
+                //printAll();
+            } else {
+                $query .= " AND upper(remote) = '$remote' ";
+            }
+
+    }
+
+    //Checks to see if there is graduation requirements filter and applies it
+    if ($graduation_requirements > 0) {
+        $query .= " AND graduation_id <= $graduation_requirements";
+    }
 }
 
-//Checks to see if there is graduation requirements filter and applies it
-if ($graduation_requirements > 0) {
-    $query .= " AND graduation_id <= $graduation_requirements";
-}
 
 
 //Executes sql command and converts array to json.

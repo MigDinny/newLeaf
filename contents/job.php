@@ -7,8 +7,8 @@ $graduations = DB::query($query_graduations);
 
 ?>
 
-<div class="text">Internships</div>
-<div id="internships" class="page-content">
+<div class="text">Trabalhos</div>
+<div id="job" class="page-content">
 
 <!-- Filters -->
 <!--Current filters: type (obligatory), course id, salary, location, remoteness(?) and graduation requirements -->
@@ -35,7 +35,6 @@ $graduations = DB::query($query_graduations);
     <option value="full" >Completamente remoto</option>
     <option value="hybrid">Híbrido</option>
     <option value="none">Não</option>
-
     </select>
 
     <label for="filters">Grau Escolaridade:</label>
@@ -48,9 +47,8 @@ $graduations = DB::query($query_graduations);
     ?>
     </select>
 
-    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('internship', course.value, null)">
+    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('job', course.value, null, '')">
 </div>
-
 
 <!-- lista com as rows das cenas -->
 
@@ -62,8 +60,8 @@ $graduations = DB::query($query_graduations);
 
 <script type="text/javascript" src="static/fetch.js"></script>
 <script>
-// call for the first time
 
-fetchData("internship", course.value, null);
+// call for the first time
+fetchData("job", course.value, null, '');
 
 </script>

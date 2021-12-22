@@ -57,21 +57,30 @@ require_once 'settings.php';
         </div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
+
+    <!-- function to find and get the value a cookie by the name-->
+    <script>
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+    </script>
     <ul class="nav-list">
       <li>
           <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
+          <input type="text" id="search-bar" placeholder="Search..." onChange="const urlParams = new URLSearchParams(window.location.search); fetchData(urlParams.get('section'), getCookie('selected_course'), null, document.getElementById('search-bar').value);">
+          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="?section=jobs">
+        <a href="?section=job">
           <i class='bx bx-briefcase'></i>
           <span class="links_name">Empregos</span>
         </a>
          <span class="tooltip">Empregos</span>
       </li>
       <li>
-       <a href="?section=internships">
+       <a href="?section=internship">
          <i class='bx bxs-graduation' ></i>
          <span class="links_name">Estágios</span>
        </a>
@@ -154,12 +163,12 @@ else {
 			include "contents/research.php";
 			break;
 		
-    case 'internships':
-      include "contents/internships.php";
+    case 'internship':
+      include "contents/internship.php";
       break;
 
-    case 'jobs':
-      include "contents/jobs.php";
+    case 'job':
+      include "contents/job.php";
       break;
 
 		default:

@@ -8,8 +8,8 @@
  * Currently, only these 3 pages need this script:
  * 
  *  - research.php (bolsas)
- *  - jobs.php (empregos)
- *  - internships.php (estágios)
+ *  - job.php (empregos)
+ *  - internship.php (estágios)
  * 
  */
 
@@ -24,26 +24,39 @@ let d;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData(section, course_id_param, location_param) {
+function fetchData(section, course_id_param, location_param, text_to_compare) {
     const url = "/api/search.php";
 
-    salary_param = parseInt(document.getElementById("salary").value) || 0;
-    remote_param = document.getElementById("remote").value.toUpperCase();
-    graduation_req_param = parseInt(document.getElementById("grad-req").value) || 0;
-    console.log(course_id_param, salary_param, remote_param, graduation_req_param);
+    if (text_to_compare == '') {
+        salary_param = parseInt(document.getElementById("salary").value) || 0;
+        remote_param = document.getElementById("remote").value.toUpperCase();
+        graduation_req_param = parseInt(document.getElementById("grad-req").value) || 0;
+        console.log(course_id_param, salary_param, remote_param, graduation_req_param);
 
-    if( location_param == undefined ){
+        if( location_param == undefined ){
+            location_param = "";
+        }
+        /*
+        if(remote_param == undefined){
+            remote_param = "";
+        }
+
+        if(graduation_req_param == undefined){
+            graduation_req_param = "";
+        }*/
+    } else {
+        salary_param = 0;
+        remote_param = "ALL";
+        graduation_req_param = 0;
         location_param = "";
+        console.log(text_to_compare);
+        
+
+
     }
 
-    /*
-    if(remote_param == undefined){
-        remote_param = "";
-    }
 
-    if(graduation_req_param == undefined){
-        graduation_req_param = "";
-    }*/
+    
 
     let get_params = {
         type: section,
@@ -52,7 +65,9 @@ function fetchData(section, course_id_param, location_param) {
         location:location_param,
         remote:remote_param,
         graduation_requirements:graduation_req_param,
+        find_offers: text_to_compare,
     }
+    console.log(get_params);
     
     res = axios.get(url, {params: get_params})
     .then(data => updateData(data.data, section, data))
