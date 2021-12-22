@@ -47,49 +47,6 @@ INSERT INTO `course` (`id`, `name`) VALUES
 (6, 'Relações Internacionais'),
 (7, 'Outro');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `drinks`
---
-
-DROP TABLE IF EXISTS `drinks`;
-CREATE TABLE IF NOT EXISTS `drinks` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `drinks`
---
-
-INSERT INTO `drinks` (`id`, `name`) VALUES
-(1, 'white russian'),
-(2, 'vodka');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `food`
---
-
-DROP TABLE IF EXISTS `food`;
-CREATE TABLE IF NOT EXISTS `food` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `food`
---
-
-INSERT INTO `food` (`id`, `name`) VALUES
-(1, 'banana'),
-(2, 'orange'),
-(3, 'strawberry'),
-(4, 'ananas');
 
 -- --------------------------------------------------------
 
