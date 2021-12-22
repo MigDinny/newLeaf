@@ -73,11 +73,18 @@ if (isset($_GET['section'])) {
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
-      <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
+
+
+      <?php
+      if (!isset($_GET['section'])) {}
+      else if ($_GET['section'] == 'jobs' || $_GET['section'] == 'internships' || $_GET['section'] == 'research') {
+        echo '<li>
+            <i class=\'bx bx-search\' ></i>
+            <input type="text" id="search-bar" placeholder="Search..." onChange="fetchData(\''.$_GET['section'].'\');">
+            <span class="tooltip">Search</span>
+            </li>';
+      }
+      ?>
 
 
       <?php

@@ -67,51 +67,59 @@ function printAll(){
     die();
 }
 
-//Checks to see if there is salary filter
-if(isset($_GET['salary'])){
-    
-    $salary = $_GET['salary'];
+$query_text = strtoupper($_GET['query_text']);
+if (strlen($query_text) > 0) {
+    $query .= " AND (upper(name) LIKE '%$query_text%' OR upper(details) LIKE '%$query_text%' OR upper(company) LIKE '%$query_text%' OR upper(location) LIKE '%$query_text%') ";
 
-    //Checks if the value is valid
-    if($salary < 0  || !intval($salary)){
-        //printAll();
-    } else if ($salary > 0) {
-        $query .= " AND salary >= " . $salary;
-    }
-    
-}
-
-//Checks to see if there is location filter
-if(isset($_GET['location'])){
-    
-    $location = strtoupper($_GET['location']);
-
-    $query .= " AND upper(location) LIKE '%$location%' ";    
-}
-
-//Checks to see if there is remote filter
-if(isset($_GET['remote'])){
-    
-    $remote = strtoupper($_GET['remote']);
+} else {
+    //Checks to see if there is salary filter
+    if(isset($_GET['salary'])){
+        
+        $salary = $_GET['salary'];
 
         //Checks if the value is valid
-        if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
+        if($salary < 0  || !intval($salary)){
             //printAll();
-        } else {
-            $query .= " AND upper(remote) = '$remote' ";
+        } else if ($salary > 0) {
+            $query .= " AND salary >= " . $salary;
         }
+        
+    }
 
-}
+    //Checks to see if there is location filter
+    if(isset($_GET['location'])){
+        
+        $location = strtoupper($_GET['location']);
 
-//Checks to see if there is graduation requirements filter and applies it
-if ($graduation_requirements > 0) {
-    $query .= " AND graduation_id <= $graduation_requirements";
+        $query .= " AND upper(location) LIKE '%$location%' ";    
+    }
+
+    //Checks to see if there is remote filter
+    if(isset($_GET['remote'])){
+        
+        $remote = strtoupper($_GET['remote']);
+
+            //Checks if the value is valid
+            if($remote != "NONE" && $remote != "FULL" && $remote != "HYBRID"){
+                //printAll();
+            } else {
+                $query .= " AND upper(remote) = '$remote' ";
+            }
+
+    }
+
+    //Checks to see if there is graduation requirements filter and applies it
+    if ($graduation_requirements > 0) {
+        $query .= " AND graduation_id <= $graduation_requirements";
+    }
 }
 
 
 //Executes sql command and converts array to json.
 $data = DB::query($query);
 $out_array = [];
+//echo $query;
+
 
 //Get course name
 $query_temp = "SELECT * FROM course WHERE id =" .$course_id;

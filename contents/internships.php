@@ -48,7 +48,7 @@ $graduations = DB::query($query_graduations);
     ?>
     </select>
 
-    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('internship', course.value, null)">
+    <input style="margin-left: 20px" type="submit" value="Submeter" onclick="fetchData('internship')">
 </div>
 
 
@@ -64,6 +64,6 @@ $graduations = DB::query($query_graduations);
 <script>
 // call for the first time
 
-fetchData("internship", course.value, null);
+fetchData("internship");
 
 </script>
