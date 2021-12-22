@@ -24,39 +24,18 @@ let d;
  * This function must be called WHENEVER a list-reload is necessary.
  * 
  */
-function fetchData(section, course_id_param, location_param, text_to_compare) {
+function fetchData(section) {
     const url = "/api/search.php";
 
-    if (text_to_compare == '') {
-        salary_param = parseInt(document.getElementById("salary").value) || 0;
-        remote_param = document.getElementById("remote").value.toUpperCase();
-        graduation_req_param = parseInt(document.getElementById("grad-req").value) || 0;
-        console.log(course_id_param, salary_param, remote_param, graduation_req_param);
-
-        if( location_param == undefined ){
-            location_param = "";
-        }
-        /*
-        if(remote_param == undefined){
-            remote_param = "";
-        }
-
-        if(graduation_req_param == undefined){
-            graduation_req_param = "";
-        }*/
-    } else {
-        salary_param = 0;
-        remote_param = "ALL";
-        graduation_req_param = 0;
-        location_param = "";
-        console.log(text_to_compare);
+    course_id_param = document.getElementById("course").value;
+    salary_param = parseInt(document.getElementById("salary").value) || 0;
+    remote_param = document.getElementById("remote").value.toUpperCase();
+    graduation_req_param = parseInt(document.getElementById("grad-req").value) || 0;
+    //location_param = document.getElementById("location");
+    location_param = "";
+    text_to_compare = document.getElementById("search-bar").value || '';
+    console.log(course_id_param, salary_param, remote_param, graduation_req_param, text_to_compare);
         
-
-
-    }
-
-
-    
 
     let get_params = {
         type: section,
