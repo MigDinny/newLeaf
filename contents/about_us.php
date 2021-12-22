@@ -71,15 +71,14 @@
      <p><b>Contacto:</b> newleafdei@gmail.com</p>
      <p><b> Siga-nos também nas nossas redes sociais:</b></p>
           <a href = "https://www.facebook.com/newleafdei">
-          <img src="/static/images/fb-logo.png"  alt="Error">
+          <img src="/static/images/fb-logo.png"  alt="Error" width="50" height="50">
           </a>
           <a href = "https://www.instagram.com/newleafdei/">
-          <img src="/static/images/intalogo.png" alt="Error">
+          <img src="/static/images/intalogo.png" alt="Error" width="50" height="50">
           </a>
      <br>
      <br>
-     <p  style="text-align: justify;"><b>Aviso legal: </b>os conteúdos constantes neste website foram realizados por alunos no âmbito de uma disciplina – Processos de gestão e
-          Inovação – do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
+     <p  style="text-align: justify;"><b>Aviso legal: </b>os conteúdos constantes deste website foram realizados por alunos no âmbito de uma disciplina – Processos de gestão e Inovação – do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
           Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.</p>
 </div>
     
