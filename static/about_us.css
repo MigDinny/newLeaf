@@ -31,7 +31,7 @@ display: table;
     font-weight: bold;
   }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1500px) {
     body {
         background-size: cover;
         background-image: url('static/images/mobile.jpg');
