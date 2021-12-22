@@ -69,8 +69,18 @@ require_once 'settings.php';
     <ul class="nav-list">
       <li>
           <i class='bx bx-search' ></i>
-          <input type="text" id="search-bar" placeholder="Search..." onChange="const urlParams = new URLSearchParams(window.location.search); fetchData(urlParams.get('section'), getCookie('selected_course'), null, document.getElementById('search-bar').value);">
+          <input type="text" id="search-bar" placeholder="Search..." onChange="const urlParams = new URLSearchParams(window.location.search); fetchData(urlParams.get('section'), '1', null, document.getElementById('search-bar').value);">
           <span class="tooltip">Search</span>
+          <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('section') === 'job' || urlParams.get('section') === 'internship' || urlParams.get('section') === 'research') {
+              document.getElementById('search-bar').disabled = false;
+            } else {
+              document.getElementById('search-bar').disabled = true;
+              var elem = document.getElementsByClassName('nav-list')[0].children[0];
+              elem.innerHTML = '';
+            }
+          </script>
       </li>
       <li>
         <a href="?section=job">

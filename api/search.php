@@ -57,7 +57,7 @@ if($type != "research" && $type != "internship" && $type != "job"){
 
 
 $query .= " $type ";
-$query .= " WHERE course_id = " . $course_id;
+
 
 
 //If a parameter is wrong, everything is printed.
@@ -74,9 +74,11 @@ function printAll(){
 }
 
 if (strlen($text_to_find) > 0) {
-    $query .= " AND (upper(name) LIKE '%$text_to_find%' OR upper(details) LIKE '%$text_to_find%' OR upper(company) LIKE '%$text_to_find%' OR upper(location) LIKE '%$text_to_find%') ";
+    $query .= "WHERE upper(name) LIKE '%$text_to_find%' OR upper(details) LIKE '%$text_to_find%' OR upper(company) LIKE '%$text_to_find%' OR upper(location) LIKE '%$text_to_find%' ";
 
 } else {
+    $query .= " WHERE course_id = " . $course_id;
+
     //Checks to see if there is salary filter
     if(isset($_GET['salary'])){
         
