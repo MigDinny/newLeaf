@@ -86,6 +86,7 @@ function updateData(jsonResponseObj, section, test) {
         innerHTML += "<span><b>Salário bruto:</b> " + row.salary + "</span><br>";
         innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements[1] + "</span><br>";
         innerHTML += "<span><b>Remote: </b> " + row.remote + "</span><br>";
+        innerHTML += "<span><b>Detalhes: </b> " + row.details + " </span><br>";
 
         // create element
         li = document.createElement("li");

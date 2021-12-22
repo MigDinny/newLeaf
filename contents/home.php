@@ -6,6 +6,16 @@ $job_count = DB::queryFirstRow("SELECT count(id) FROM job;")['count(id)'];
 $internship_count = DB::queryFirstRow("SELECT count(id) FROM internship;")['count(id)'];
 $research_count = DB::queryFirstRow("SELECT count(id) FROM research;")['count(id)'];
 
+if (isset($_GET['msg'])) {
+    switch ($_GET['msg']) {
+
+        case 'not_selected':
+            echo "<script>alert('Escolhe primeiro um curso.');</script>";
+            break;
+
+    }
+}
+
 ?>
 
 <div id="homepage-centered">
