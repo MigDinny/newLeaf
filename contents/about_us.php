@@ -1,6 +1,6 @@
 
 <div class="text">About Us</div>
-
+<br><br>
   <div class="container">
     <p  style="text-align: justify;"> Já ouviste falar no LinkedIn? No Indeed? E no Glassdoor? A newLeaf pretende ser isso e muito mais.</p>
     <br>
@@ -17,36 +17,42 @@
           <div class = container3>
           <img src="/static/images/profilePics/photoAlexy.jpg" style= "clip-path: circle()" alt="Error" >
           <div class ="bottom">Alexy Almeida</p></div>
+          <span style="font-weight: normal;">Marketing</span>
           </div>
      </div>
      <div class="column2">
           <div class = container3>
           <img src="/static/images/profilePics/photoEdgar.png" style= "clip-path: circle()" alt="Error">
           <div class ="bottom">Edgar Duarte</p></div>
+          <span style="font-weight: normal;">Developer</span>
           </div>
      </div>
      <div class="column2">
           <div class = container3>
           <img src="/static/images/profilePics/photoEva.png" style= "clip-path: circle()" alt="Error">
           <div class ="bottom">Eva Teixeira</p></div>
+          <span style="font-weight: normal;">Marketing</span>
           </div>
      </div>
      <div class="column2">
           <div class = container3>
           <img src="/static/images/profilePics/photoCatre.jpg" style= "clip-path: circle()"alt="Error" >
           <div class ="bottom">João Catré</p></div>
+          <span style="font-weight: normal;">Developer</span>
           </div>
      </div>
      <div class="column2">
           <div class = container3>
           <img src="/static/images/profilePics/photoJoana.jpg" style= "clip-path: circle()" alt="Error" >
           <div class ="bottom">Joana Antunes</p></div>
+          <span style="font-weight: normal;">Marketing</span>
           </div>
      </div>
      <div class="column2" >
           <div class = container3>
           <img src="/static/images/profilePics/photoMijel.jpg" style= "clip-path: circle()" alt="Error">
           <div class ="bottom">Miguel Dinis</p></div>
+          <span style="font-weight: normal;">Tech Lead</span>
           </div>
      </div>
      <div class="column2">
@@ -54,6 +60,7 @@
 
           <img src="/static/images/profilePics/photoRodas.jpg" style= "clip-path: circle()"  alt="Error">
           <div class ="bottom">Rodrigo Ferreira</p></div>
+          <span style="font-weight: normal;">Developer</span>
           </div>
      </div>
      
@@ -62,7 +69,7 @@
      <br>
      <br>
      <p><b>Contacto:</b> newleafdei@gmail.com</p>
-     <p><b> Siganos também nas nossas redes sociais:</b></p>
+     <p><b> Siga-nos também nas nossas redes sociais:</b></p>
           <a href = "https://www.facebook.com/newleafdei">
           <img src="/static/images/fb-logo.png"  alt="Error">
           </a>
@@ -71,8 +78,8 @@
           </a>
      <br>
      <br>
-     <p  style="text-align: justify;"><b>Aviso legal: </b>os conteúdos constantes website foram realizados por alunos no âmbito de uma disciplina– Processos de gestão e
-          Inovação - do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
+     <p  style="text-align: justify;"><b>Aviso legal: </b>os conteúdos constantes neste website foram realizados por alunos no âmbito de uma disciplina – Processos de gestão e
+          Inovação – do 3º ano da licenciatura de Engenharia Informática da Faculdade de Ciências e Tecnologia da Universidade de
           Coimbra (FCTUC), pelo que a FCTUC não se responsabiliza pelo seu conteúdo.</p>
 </div>
     
