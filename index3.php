@@ -34,14 +34,32 @@ if (isset($_GET['section'])) {
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
-  <script src="static/home.js"></script>
-
-
   <!-- Offer creation Link -->
-  <link rel="stylesheet" href="static/offer.css">
 
 
-  <link rel="stylesheet" href="static/about_us.css">
+  <?php
+
+  if (isset($_GET['section'])) {
+    switch ($_GET['section']) {
+
+      case 'home':
+        
+        break;
+      
+      case 'create-offer':
+        echo '<link rel="stylesheet" href="static/offer.css">';
+        break;
+      
+      case 'about':
+        echo '<link rel="stylesheet" href="static/about_us.css">';
+        break;
+
+    }
+  } else {
+    echo '<script src="static/home.js"></script>';
+  }
+
+  ?>
 
 
 </head>
