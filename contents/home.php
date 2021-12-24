@@ -25,22 +25,12 @@ if (isset($_GET['msg'])) {
     
     <div style="width: 25%; min-width: 250px;">
         <select id="select-search-course" onchange="selectCourse(this);">
+            <option id='choose-course-option' value='' disabled selected hidden>Escolhe um curso</option>
+
             <?php
-                $alreadySelected = false;
-
-                if (!isset($_COOKIE['selected_course'])) {
-                    echo "<option value='' disabled selected hidden>Escolhe um curso</option>";
-                    $alreadySelected = true;
-                }
-
                 foreach ($course_list as $course) {
-                    if ($alreadySelected == false && $course['id'] == $_COOKIE['selected_course']) {
-                        echo "<option value='" . $course['id']  . "' selected>" . $course['name'] . "</option>";
-                        $alreadySelected = true;
-                    } else echo "<option value='" . $course['id']  . "'>" . $course['name'] . "</option>";
+                        echo "<option value='" . $course['id']  . "'>" . $course['name'] . "</option>";
                 }
-                
-                if ($alreadySelected == false) echo "<option value='' disabled selected hidden>Escolhe um curso</option>";
             ?>
         </select>
 
@@ -82,9 +72,25 @@ if (isset($_GET['msg'])) {
 </div>
 
 <script>
-  $(document).ready(function () {
-      $('#select-search-course').selectize({
-          sortField: 'text'
-      });
-  });
+    $(document).ready(function () {
+
+        
+        let course = JSON.parse(localStorage.getItem('selected_course'));
+
+        if (course != null) {
+            $('#choose-course-option').remove();
+            $('#select-search-course').children('option').each(function(){
+                console.log(parseInt(this.value) == course);
+                
+                if (this.value == course) {
+                    this.setAttribute("selected", "selected");
+                }
+            });
+        }
+
+        $('#select-search-course').selectize({
+            sortField: 'text'
+        });
+
+    });
 </script>

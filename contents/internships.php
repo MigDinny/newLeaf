@@ -62,8 +62,18 @@ $graduations = DB::query($query_graduations);
 
 <script type="text/javascript" src="static/fetch.js"></script>
 <script>
-// call for the first time
 
+let course = JSON.parse(localStorage.getItem('selected_course'));
+
+$('#course').children('option').each(function(){
+    console.log(parseInt(this.value) == course);
+    
+    if (this.value == course) {
+        this.setAttribute("selected", "selected");
+    }
+});
+
+// call for the first time
 fetchData("internship");
 
 </script>

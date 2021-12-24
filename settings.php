@@ -1,7 +1,7 @@
 <?php
 require_once 'db.class.php';
 
-//error_reporting(-1);
+error_reporting(0); // -1 all
 
 $production = false;
 

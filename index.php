@@ -1,15 +1,6 @@
 <?php
 require_once 'settings.php';
 
-// check course cookie and redirect 
-if (isset($_GET['section'])) {
-    if ($_GET['section'] == 'jobs' || $_GET['section'] == 'internships' || $_GET['section'] == 'research') {
-
-        if (!isset($_COOKIE['selected_course'])) header("Location: /?msg=not_selected");
-
-    }
-}
-
 ?>
 
 <html>
@@ -36,7 +27,6 @@ if (isset($_GET['section'])) {
 
   <!-- Offer creation Link -->
 
-
   <?php
 
   if (isset($_GET['section'])) {
@@ -53,7 +43,10 @@ if (isset($_GET['section'])) {
       case 'about':
         echo '<link rel="stylesheet" href="static/about_us.css">';
         break;
-
+      
+      case 'jobs': case 'internships': case 'research':
+        echo '<script>if (localStorage.getItem("selected_course") == null) window.location.replace("/?msg=not_selected"); </script>';
+        break;
     }
   } else {
     echo '<script src="static/home.js"></script>';
@@ -105,33 +98,31 @@ if (isset($_GET['section'])) {
       ?>
 
 
-      <?php
+    <div id="listings">
+      <li>
+        <a href="?section=jobs">
+          <i class='bx bx-briefcase'></i>
+          <span class="links_name">Empregos</span>
+        </a>
+          <span class="tooltip">Empregos</span>
+      </li>
+      <li>
+        <a href="?section=internships">
+          <i class='bx bxs-graduation' ></i>
+          <span class="links_name">Estágios</span>
+        </a>
+        <span class="tooltip">Estágios</span>
+      </li>      
+      <li >
+        <a href="?section=research">
+          <i class='bx bx-archive' ></i>
+          <span class="links_name">Bolsas de investigação</span>
+        </a>
+        <span class="tooltip">Bolsas de investigação</span>
+      </li>
+    </div>
 
-        if (isset($_COOKIE['selected_course'])) {
-            echo '<li>
-            <a href="?section=jobs">
-              <i class=\'bx bx-briefcase\'></i>
-              <span class="links_name">Empregos</span>
-            </a>
-             <span class="tooltip">Empregos</span>
-          </li>
-          <li>
-           <a href="?section=internships">
-             <i class=\'bx bxs-graduation\' ></i>
-             <span class="links_name">Estágios</span>
-           </a>
-           <span class="tooltip">Estágios</span>
-         </li>      
-          <li>
-           <a href="?section=research">
-             <i class=\'bx bx-archive\' ></i>
-             <span class="links_name">Bolsas de investigação</span>
-           </a>
-           <span class="tooltip">Bolsas de investigação</span>
-         </li>';
-        }
-
-      ?>
+    
 
 
      <li>
@@ -225,6 +216,14 @@ else {
 </section>
 
 <script type="text/javascript" src="static/sidebar.js"></script>
+<script>
+
+  if (localStorage.getItem('selected_course') == null) {
+    document.getElementById('listings').innerHTML = "";
+  }
+
+
+</script>
 
 </body>
 </html>
