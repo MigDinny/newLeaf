@@ -59,19 +59,25 @@ CREATE TABLE IF NOT EXISTS `graduation_level` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `graduation_level`
 --
 
 INSERT INTO `graduation_level` (`id`, `name`) VALUES
-(1, 'A fazer licenciatura'),
-(2, 'Licenciatura'),
-(3, 'A fazer mestrado'),
-(4, 'Mestrado'),
-(5, 'A fazer douturamento'),
-(6, 'Douturamento');
+(1, 'Indiferente'),
+(2, 'A fazer licenciatura'),
+(3, 'Licenciatura'),
+(4, 'A fazer mestrado'),
+(5, 'Mestrado'),
+(6, 'A fazer doutoramento'),
+(7, 'Doutoramento');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- --------------------------------------------------------
 
