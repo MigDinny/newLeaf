@@ -41,8 +41,10 @@ $graduations = DB::query($query_graduations);
     <select name="filters" id="grad-req">
     <option value="none">Qualquer um</option>
     <?php
+    $counter = 0;
     foreach ($graduations as $graduation) {
-        echo "<option value=" . $graduation['id'] . " >" . $graduation['name'] . "</option>";
+        if(!$counter) $counter = 1;
+        else echo "<option value=" . $graduation['id'] . " >" . $graduation['name'] . "</option>";
     }
     ?>
     </select>

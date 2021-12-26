@@ -42,9 +42,9 @@ $graduation_list = DB::query("SELECT * FROM graduation_level;")
 
           <div class="input-box2">
             <span class="details">Inicio</span>
-            <input name="start_date" type="month" placeholder="Data de inicio" required>
+            <input name="start_date" type="month" placeholder="Data de inicio">
             <span class="details">Fim</span>
-            <input name="end_date" type="month" placeholder="Data de fim" required>
+            <input name="end_date" type="month" placeholder="Data de fim">
           </div>
 
           

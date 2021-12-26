@@ -81,9 +81,25 @@ function updateData(jsonResponseObj, section, test) {
         innerHTML += "<h3>" + row.name + "</h3>";
         innerHTML += "<span><b>Localização:</b> " + row.location + "</span><br>";
         innerHTML += "<span><b>Empresa:</b> " + row.company + "</span><br>";
-        innerHTML += "<span><b>Salário bruto:</b> " + row.salary + "</span><br>";
+        innerHTML += "<span><b>Salário mensal:</b> " + row.salary + "</span><br>";
         innerHTML += "<span><b>Requisitos Académicos:</b> " + row.graduation_requirements[1] + "</span><br>";
-        innerHTML += "<span><b>Remote: </b> " + row.remote + "</span><br>";
+
+        switch(row.remote){
+            case "NONE":
+                innerHTML += "<span><b>Remote: </b> " + "Presencial" + "</span><br>";
+                break;
+            case "HYBRID":
+                innerHTML += "<span><b>Remote: </b> " + "Híbrido" + "</span><br>";
+                break;
+            case "FULL":
+                innerHTML += "<span><b>Remote: </b> " + "Remoto" + "</span><br>";
+                break;
+            default:
+                innerHTML += "<span><b>Remote: </b> " + "Remoto" + "</span><br>";
+                break;
+
+        }
+        
         innerHTML += "<span><b>Detalhes: </b> " + row.details + " </span><br>";
 
         // create element

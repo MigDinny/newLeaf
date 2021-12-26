@@ -3,7 +3,7 @@ require_once 'db.class.php';
 
 error_reporting(0); // -1 all
 
-$production = true;
+$production = false;
 
 // default values
 DB::$user = 'root';
