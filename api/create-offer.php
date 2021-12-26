@@ -121,7 +121,7 @@ if( isset( $_POST['submit'])){
 
     }
     
-    header("Location: /index?section=create_offer&result=0");
+    header("Location: /?section=create_offer&result=0");
 }
 
 
