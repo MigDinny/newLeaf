@@ -13,7 +13,7 @@ if( isset( $_POST['submit'])){
     $salary = $_POST['salary'];
 
     if(!intval($salary)){  
-        header("Location: /index?section=create_offer&result=1"); 
+        header("Location: /?section=create_offer&result=1"); 
         die();
     }
     
@@ -29,19 +29,19 @@ if( isset( $_POST['submit'])){
     $type = $_POST['type'];
     
     if(!$type){
-        header("Location: /index?section=create_offer&result=3"); 
+        header("Location: /?section=create_offer&result=3"); 
         die();
     }
 
     $course_id = $_POST['course_id'];
     if(!$course_id){
-        header("Location: /index?section=create_offer&result=5"); 
+        header("Location: /?section=create_offer&result=5"); 
         die();
     }
 
     $remote = $_POST['remote'];
     if(!$remote){
-        header("Location: /index?section=create_offer&result=4"); 
+        header("Location: /?section=create_offer&result=4"); 
         die();
     }
 
@@ -56,7 +56,7 @@ if( isset( $_POST['submit'])){
             $remote_value = "HYBRID";
             break;
         default:
-            header("Location: /index?section=create_offer&result=4"); 
+            header("Location: /?section=create_offer&result=4"); 
             die();
     }
 
@@ -64,7 +64,7 @@ if( isset( $_POST['submit'])){
     $requisites = $_POST['requisites'];
 
     if(!$requisites){
-        header("Location: /index?section=create_offer&result=2"); 
+        header("Location: /?section=create_offer&result=2"); 
         die();
     }
 
