@@ -69,6 +69,7 @@
      <br>
      <br>
      <p><b>Contacto:</b> newleafdei@gmail.com</p>
+     <p><a href = "?section=send_message" style="color:#0000FF" >Deixa um comentário</a></p>
      <p><b> Siga-nos também nas nossas redes sociais:</b></p>
           <a href = "https://www.facebook.com/newleafdei">
           <img src="/static/images/fb-logo.png"  alt="Error" width="50" height="50">

@@ -206,6 +206,10 @@ else {
       include "contents/about_us.php";
       break;
       
+    case 'send_message':
+      include "contents/send_message.php";
+      break;
+
 		default:
 			include "contents/home.php";
 			break;
