@@ -70,10 +70,10 @@
      <br>
      <p><b>Contacto:</b> newleafdei@gmail.com</p>
      <p><b> Siga-nos também nas nossas redes sociais:</b></p>
-          <a href = "https://www.facebook.com/newleafdei">
+          <a href = "https://www.facebook.com/newleafdei" target=“_blank”>
           <img src="/static/images/fb-logo.png"  alt="Error" width="50" height="50">
           </a>
-          <a href = "https://www.instagram.com/newleafdei/">
+          <a href = "https://www.instagram.com/newleafdei/" target=“_blank”>
           <img src="/static/images/intalogo.png" alt="Error" width="50" height="50">
           </a>
      <br>

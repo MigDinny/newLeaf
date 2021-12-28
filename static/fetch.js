@@ -86,16 +86,16 @@ function updateData(jsonResponseObj, section, test) {
 
         switch(row.remote){
             case "NONE":
-                innerHTML += "<span><b>Remote: </b> " + "Presencial" + "</span><br>";
+                innerHTML += "<span><b>Modo: </b> " + "Presencial" + "</span><br>";
                 break;
             case "HYBRID":
-                innerHTML += "<span><b>Remote: </b> " + "Híbrido" + "</span><br>";
+                innerHTML += "<span><b>Modo: </b> " + "Híbrido" + "</span><br>";
                 break;
             case "FULL":
-                innerHTML += "<span><b>Remote: </b> " + "Remoto" + "</span><br>";
+                innerHTML += "<span><b>Modo: </b> " + "Remoto" + "</span><br>";
                 break;
             default:
-                innerHTML += "<span><b>Remote: </b> " + "Remoto" + "</span><br>";
+                innerHTML += "<span><b>Modo: </b> " + "Remoto" + "</span><br>";
                 break;
 
         }
