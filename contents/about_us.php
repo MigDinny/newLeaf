@@ -10,6 +10,8 @@
     <br>
     <p  style="text-align: justify;"> Temos conhecimento do trabalho ainda por ser realizado, pelo que, neste momento, o vosso feedback é fulcral para nos apoiar enquanto estudantes e enquanto criadores do projeto.</p>
     <br>
+    <p><b><a href = "?section=send_message" style="color:#0000FF" >Enviar feedback</a></b></p>
+    <br>
     <p><b>Membros:</b></p>
 
     <div class = "row2">
@@ -69,7 +71,6 @@
      <br>
      <br>
      <p><b>Contacto:</b> newleafdei@gmail.com</p>
-     <p><a href = "?section=send_message" style="color:#0000FF" >Deixa um comentário</a></p>
      <p><b> Siga-nos também nas nossas redes sociais:</b></p>
           <a href = "https://www.facebook.com/newleafdei">
           <img src="/static/images/fb-logo.png"  alt="Error" width="50" height="50">
