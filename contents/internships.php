@@ -29,7 +29,7 @@ $graduations = DB::query($query_graduations);
     <!--<label for="filters">Localização:</label>
     <input name="duration" style="margin-left: 0px" type="text" placeholder="Introduzir cidade" required>-->
 
-    <label for="filters">Remoto:</label>
+    <label for="filters">Modo:</label>
     <select name="filters" id="remote">
     <option value="all">Qualquer um</option>
     <option value="full" >Completamente remoto</option>
